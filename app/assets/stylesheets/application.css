@@ -1,0 +1,9 @@
+.notice {
+  background-color: brown;
+  color: white;
+  font-size: 14px;
+}
+
+body {
+  background-color: rgb(250, 236, 218);
+}

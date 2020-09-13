@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  junior: one
+  senior: one
+  chat: MyString
+  uuid: MyString
+
+two:
+  junior: two
+  senior: two
+  chat: MyString
+  uuid: MyString
