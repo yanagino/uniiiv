@@ -13,6 +13,23 @@ module SessionsHelper
 
   def status_resigned?
     !!current_user.status
+    #高校生か大学生か登録している？
+  end
+
+  def seniors?
+    if current_user.status == "seniors"
+      return true
+    else
+      return false
+    end
+  end
+
+  def juniors?
+    if current_user.status == "juniors"
+      return true
+    else
+      return false
+    end
   end
 
 end

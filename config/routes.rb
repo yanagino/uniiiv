@@ -15,4 +15,12 @@ Rails.application.routes.draw do
   get "/seniors" => "users#se_index"
   get "/juniors/:uid" => "users#juniors"
   get "/seniors/:uid" => "users#seniors"
+
+  resources :links, only: [:create] do
+    member do
+      post :approve
+      post :deny
+    end
+  end
+
 end

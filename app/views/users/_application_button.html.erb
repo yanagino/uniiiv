@@ -1,0 +1,10 @@
+<% if juniors? %>
+  <% unless current_user.requesting?(user) %>
+    <%= form_for(current_user.links_se.build) do |f| %>
+      <%= hidden_field_tag :senior_id, user.id %>
+      <%= f.submit '申請する' %>
+    <% end %>
+  <% else %>
+    <p>申請済</p>
+  <% end %>
+<%end%>
