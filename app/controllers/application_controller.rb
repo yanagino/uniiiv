@@ -14,14 +14,14 @@ class ApplicationController < ActionController::Base
   def forbid_logged_in_user
     if logged_in?
       flash[:notice] = "すでにログインしています"
-      redirect_to("/posts")
+      redirect_to("/")
     end
   end
 
-  #他人に紐づくレコードを編集・閲覧・削除などしようとしたときに発動するメソッド
+  #他人に紐づくチャットルームにアクセスしようとしたときに発動するメソッド
   def correct_user
-    @post = current_user.microposts.find_by(id: params[:id])
-    unless @post
+    @link = Link.find_by(uuid: params[:id])
+    unless @link.junior_id == current_user.id || @link.senior_id == current_user.id
       flash[:notice] = "権限がありません"
       redirect_to("/")
     end

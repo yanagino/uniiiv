@@ -10,32 +10,15 @@ class User < ApplicationRecord
   def request(senior)
     if self.status == "juniors" && senior.status == "seniors"
       self.links_se.find_or_create_by(senior_id: senior.id)
-    else
-      flash[:notice] = "権限がありません"
-      redirect_to("/")
     end
   end
 
-  def approve(junior)
-    if self.status == "seniors" && junior.status == "juniors"
-      link = self.links_ju.find_by(junior_id: junior.id)
-      link.chat = "approve"
-      link.uuid = SecureRandom.uuid
-      link.save
-    else
-      flash[:notice] = "権限がありません"
-      redirect_to("/")
-    end
-  end
 
   def deny(junior)
     if self.status == "seniors" && junior.status == "juniors"
       link = self.links_ju.find_by(junior_id: junior.id)
       link.chat = "deny"
       link.save
-    else
-      flash[:notice] = "権限がありません"
-      redirect_to("/")
     end
   end
   

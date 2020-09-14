@@ -1,0 +1,27 @@
+<h1>チャットルーム</h1>
+
+<% if seniors? %>
+  <% unless @junior_links.empty? %>
+    <% @junior_links.each do |link| %>
+      <% @id = link.junior_id %>
+      <% @junior = User.find_by(id: @id)%>
+      <div>
+        <%= link_to(@junior.name, "/messages/#{link.uuid}") %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>現在チャットはご利用できません。</p>
+  <% end %>
+<% elsif juniors? %>
+  <% unless @senior_links.empty? %>
+    <% @senior_links.each do |link| %>
+      <% @id = link.senior_id %>
+      <% @senior = User.find_by(id: @id)%>
+      <div>
+        <%= link_to(@senior.name, "/messages/#{link.uuid}") %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>現在チャットはご利用できません。</p>
+  <% end %>
+<% end %>

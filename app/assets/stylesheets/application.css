@@ -1,3 +1,33 @@
+.header {
+  background-color: rgba(2, 7, 78, 0.781);
+  color: white;
+  text-align: center;
+  padding: 0 100px;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  float: left;
+}
+
+.header-menu {
+  padding-top: 17px; 
+  float: right;
+  vertical-align: middle;
+}
+
+.header-bar {
+  margin: 0 10px;
+}
+
+.clear {
+  clear: left;
+}
+
 .notice {
   background-color: brown;
   color: white;
@@ -6,4 +36,31 @@
 
 body {
   background-color: rgb(250, 236, 218);
+  max-width: 1170px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  background-color: rgba(31, 141, 4, 0.863);
+  color: white;
+  border-radius: 100px;
+  margin: 10px 500px;
+  font-size: 20px;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.btn-disable {
+  background-color: gray;
+}
+
+.btn-approve {
+  background-color: rgb(202, 4, 4);
+}
+
+.btn-deny {
+  color: rgb(0, 132, 255);
+  background-color: white;
 }

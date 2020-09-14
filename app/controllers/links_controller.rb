@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-before_action :require_user_logged_in
+before_action :require_user_logged_in, :status_regist
 before_action :status_juniors, only: [:create]
 before_action :status_seniors, only: [:approve, :deny]
 
@@ -22,9 +22,17 @@ before_action :status_seniors, only: [:approve, :deny]
     #高校生に何らかの通知を送りたい
     @junior = User.where(status: "juniors").find_by(uid: params[:id])
     if @junior
-      current_user.approve(@junior)
-      flash[:notice] = "申請を承認しました"
-      redirect_to("/messages/#{link.uuid}")
+      if current_user.status == "seniors"
+        @link = current_user.links_ju.find_by(junior_id: @junior.id)
+        @link.chat = "approve"
+        @link.uuid = SecureRandom.uuid
+        @link.save
+        flash[:notice] = "申請を承認しました"
+        redirect_to("/messages/#{@link.uuid}")  
+      else
+        flash[:notice] = "承認できませんでした"
+        redirect_to("/")
+      end
     else
       flash[:notice] = "承認できませんでした"
       redirect_to("/")

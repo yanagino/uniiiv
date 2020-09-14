@@ -1,12 +1,12 @@
 <% if seniors? %>
   <% if current_user.requested?(user) %>
     <% if current_user.answering?(user) == "未回答" %>
-      <%= link_to("承認する", "/links/#{user.uid}/approve", method: "POST") %>
-      <%= link_to("否認する", "/links/#{user.uid}/deny", method: "POST") %>
+      <%= link_to("承認する", "/links/#{user.uid}/approve", method: "POST", class: "btn btn-approve") %>
+      <%= link_to("否認する", "/links/#{user.uid}/deny", method: "POST", class: "btn btn-deny") %>
     <% elsif current_user.answering?(user) == "承認済" %>
-      <p>承認済</p>
+      <div class="btn btn-disable">承認済</div>
     <% elsif current_user.answering?(user) == "否認済" %>
-      <p>否認済</p>
+      <div class="btn btn-disable">否認済</div>
     <% end %>
   <% end %>
 <% end %>

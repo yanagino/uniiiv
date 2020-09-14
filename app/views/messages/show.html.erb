@@ -1,0 +1,18 @@
+<h1>メッセージ</h1>
+
+<% @messages.each do |message| %>
+  <% if message.source == "juniors" %>
+  <div>
+    <%= @junior_name %>：<%= message.message %>
+  </div>
+  <% elsif message.source == "seniors" %>
+  <div>
+    <%= @senior_name %>：<%= message.message %>
+  </div>
+  <% end %>
+<% end %>
+
+<%= form_for @message, url: {action: "create", params: {id: @link.uuid}} do |f| %>
+  <%= f.text_area :message %>
+  <%= f.submit "送信" %>
+<% end %>

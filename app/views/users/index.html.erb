@@ -1,0 +1,27 @@
+<% if juniors? %>
+  <h1>大学生への申請一覧</h1>
+    <% unless @links.empty? %>
+      <% @links.each do |link| %>
+        <% @id = link.senior_id %>
+        <% @senior = User.find_by(id: @id) %>
+        <div>
+          <%= link_to(@senior.name, "/seniors/#{@senior.uid}") %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>まだ申請を送っていません。</p>
+    <% end %>
+<% elsif seniors? %>
+  <h1>高校生からの申請一覧</h1>
+    <% unless @links.empty? %>
+      <% @links.each do |link| %>
+        <% @id = link.junior_id %>
+        <% @junior = User.find_by(id: @id) %>
+        <div>
+          <%= link_to(@junior.name, "/juniors/#{@junior.uid}") %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>まだ申請を送っていません。</p>
+    <% end %>
+<% end %>

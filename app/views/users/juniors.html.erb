@@ -1,15 +1,5 @@
 <h1>ユーザー詳細(高校生)</h1>
 
-<%= render("users/answer_button", user: @user) %>
-
-<p>id：<%= @user.id %></p>
-<p>uid：<%= @user.uid %></p>
-<p>name：<%= @user.name %></p>
-<p>status：<%= @user.status %></p>
-<p>provider：<%= @user.provider %></p>
-<p>image：<%= @user.image %></p>
 <img src="<%= @user.image %>">
-
-<div>
-  <%= link_to("TOPページ", "/posts") %>
-</div>
+<p><%= @user.name %></p>
+<%= render("users/answer_button", user: @user) %>
