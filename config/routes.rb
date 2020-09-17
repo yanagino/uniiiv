@@ -26,4 +26,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :reviews, only: [:create, :edit, :update, :destroy] do
+    member do
+      get :new
+    end
+  end
+
 end

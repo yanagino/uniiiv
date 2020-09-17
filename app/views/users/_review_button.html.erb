@@ -1,0 +1,7 @@
+<% if juniors? %>
+  <% if current_user.approved?(user) %>
+    <% unless current_user.reviewing?(user) %>
+      <%= link_to("レビューを投稿する", "/reviews/#{user.uid}", class: "btn btn-review-new") %>
+    <% end %>
+  <% end %>
+<% end %>

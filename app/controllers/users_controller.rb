@@ -19,6 +19,7 @@ before_action :require_user_logged_in, :status_regist
 
   def seniors
     @user = User.find_by(uid: params[:uid])
+    @reviews = @user.reviews
   end
 
   def juniors

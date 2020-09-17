@@ -4,3 +4,7 @@
 <p><%= @user.name %></p>
 
 <%= render("users/application_button", user: @user) %>
+<%= render("users/review_button", user: @user) %>
+
+<h3>高校生からのレビュー一覧</h3>
+<%= render("reviews/review_index.html.erb") %>

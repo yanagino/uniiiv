@@ -1,0 +1,11 @@
+<div class="review-index">
+<% @reviews.each do |review| %>
+  <p>評価：<%= review.star %></p>
+  <p>コメント：<%= review.content %></p>
+  <% junior = User.find_by(id: review.junior_id) %>
+  <p>by <%= junior.name %></p>
+  <% if current_user.id == junior.id %>
+    <%= render("users/review_edit_button", user: @user, reviwe: review) %>
+  <% end %>
+<% end %>
+</div>

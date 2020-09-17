@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>テスト用</title>
+    <title>キャリステ｜自分で決める大学進学</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,8 +11,12 @@
 
   <body>
     <%= render("layouts/header") %>
-
     <%= render("layouts/flash_messsages") %>
-    <%= yield %>
+
+    <div class="background">
+    <div class="container">
+      <%= yield %>
+    </div>
+    </div>
   </body>
 </html>

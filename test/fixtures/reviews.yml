@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  senior: one
+  junior: one
+  star: 1
+  content: MyText
+
+two:
+  senior: two
+  junior: two
+  star: 1
+  content: MyText

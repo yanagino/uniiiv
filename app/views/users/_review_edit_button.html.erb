@@ -1,0 +1,8 @@
+<% if juniors? %>
+  <% if current_user.approved?(user) %>
+    <% if current_user.reviewing?(user) %>
+      <%= link_to("編集する", "/reviews/#{user.uid}/edit", class: "btn btn-review-edit") %>
+      <%= link_to("削除する", "/reviews/#{reviwe.id}", method: "DELETE", data: { confirm: "本当によろしいですか？" }, class: "btn btn-review-destroy") %>
+    <% end %>
+  <% end %>
+<% end %>

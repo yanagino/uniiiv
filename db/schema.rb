@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_095323) do
+ActiveRecord::Schema.define(version: 2020_09_16_101611) do
 
   create_table "links", force: :cascade do |t|
     t.integer "junior_id"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 2020_09_13_095323) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "senior_id"
+    t.integer "junior_id"
+    t.integer "star"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["junior_id", "senior_id"], name: "index_reviews_on_junior_id_and_senior_id", unique: true
+    t.index ["junior_id"], name: "index_reviews_on_junior_id"
+    t.index ["senior_id"], name: "index_reviews_on_senior_id"
   end
 
   create_table "users", force: :cascade do |t|

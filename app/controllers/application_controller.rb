@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
 
   #ログインしているかつ高校生ユーザーのみ、申請できる
   def status_juniors
-    if seniors?
+    unless juniors?
       flash[:notice] = "権限がありません"
       redirect_to("/")
     end
@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
 
   #ログインしているかつ大学生ユーザーのみ、回答できる
   def status_seniors
-    if juniors?
+    unless seniors?
       flash[:notice] = "権限がありません"
       redirect_to("/")
     end

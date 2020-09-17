@@ -6,6 +6,10 @@ class User < ApplicationRecord
   has_many :links_ju, class_name: "Link", foreign_key: "senior_id"
   has_many :seniors, through: :links_se, source: :senior
   has_many :juniors, through: :links_ju, source: :junior
+ 
+  has_many :reviews, class_name: "Review", foreign_key: "senior_id"
+  has_many :reviewings, class_name: "Review", foreign_key: "junior_id"
+  has_many :reviewing_seniors, through: :reviewings, source: :senior 
 
   def request(senior)
     if self.status == "juniors" && senior.status == "seniors"
@@ -45,6 +49,27 @@ class User < ApplicationRecord
     elsif link.chat == "deny"
       return "否認済"
     end
+  end
+
+  #高校生が、その大学生にapproveされているかどうか
+  #レビューボタンを表示するかどうかで使用
+  def approved?(senior)
+    link = self.links_se.find_by(senior_id: senior.id)
+    if link
+      if link.chat == "approve"
+        return true
+      else
+        return false
+      end
+    else
+      return false
+    end
+  end
+
+  #高校生が、その大学生のレビューを投稿しているかどうか
+  #新規ボタンなのか、編集ボタンなのかで使用
+  def reviewing?(senior)
+    self.reviewing_seniors.include?(senior)
   end
 
 end

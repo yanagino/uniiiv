@@ -13,6 +13,8 @@
 <% end %>
 
 <%= form_for @message, url: {action: "create", params: {id: @link.uuid}} do |f| %>
+  <%= render("layouts/error_messages", model: f.object) %>
+
   <%= f.text_area :message %>
   <%= f.submit "送信" %>
 <% end %>
