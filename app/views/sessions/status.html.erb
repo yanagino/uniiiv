@@ -4,6 +4,3 @@
 
 <%= link_to("高校生", "/juniors/#{current_user.uid}", method: "POST", data: { confirm: "一度登録すると変更できません。よろしいですか？"}) %>
 <%= link_to("大学生", "/seniors/#{current_user.uid}", method: "POST", data: { confirm: "一度登録すると変更できません。よろしいですか？"}) %>
-
-// ログインしている、かつ、status未登録ユーザーのみ表示させる
-// それ以外はトップページに飛ばす

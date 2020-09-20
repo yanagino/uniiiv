@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "/juniors/:uid" => "sessions#juniors"
   post "/seniors/:uid" => "sessions#seniors"
 
+  resources :users, only: [:update]
   get "/juniors" => "users#ju_index"
   get "/seniors" => "users#se_index"
   get "/juniors/:uid" => "users#juniors"

@@ -1,5 +1,7 @@
 <h1>ユーザー詳細(高校生)</h1>
 
-<img src="<%= @user.image %>">
+<%= image_tag @user.image.url, class: "icon", alt: "ユーザーアイコン" %>
+<%= render("users/image_upload", user: @user) %>
+
 <p><%= @user.name %></p>
 <%= render("users/answer_button", user: @user) %>

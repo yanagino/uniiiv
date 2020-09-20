@@ -13,14 +13,12 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
     if @user && @user.status
       session[:uid] = @user.uid
       @user.name = data[:info][:name]
-      @user.image = data[:info][:image]
       @user.save
       flash[:notice] = "ログインしました"
       redirect_to("/#{@user.status}/#{@user.uid}")
     elsif @user
       session[:uid] = @user.uid
       @user.name = data[:info][:name]
-      @user.image = data[:info][:image]
       @user.save
       flash[:notice] = "ログインしました"
       redirect_to("/status")
@@ -28,7 +26,6 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
       @user = User.new(
         uid: data[:uid],
         name: data[:info][:name],
-        image: data[:info][:image],
         provider: data[:provider],
       )
       if @user.save

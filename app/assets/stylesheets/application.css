@@ -24,7 +24,7 @@
 }
 
 .header {
-  background-color: rgba(2, 7, 78, 0.781);
+  background-color: rgba(3, 71, 116, 0.884);
   color: white;
   text-align: center;
   padding: 0 100px;
@@ -63,8 +63,13 @@
   font-size: 14px;
 }
 
+img {
+  border-radius: 100px;
+  background-color: white;
+}
+
 .background {
-  background-color: rgb(250, 236, 218);
+  background-color: rgb(234, 237, 238);
 }
 
 .container {
@@ -101,4 +106,16 @@
 .btn-deny {
   color: rgb(0, 132, 255);
   background-color: white;
+}
+
+footer {
+  background-color: rgba(3, 71, 116, 0.884);
+  height: 70px;
+  text-align: center;
+}
+
+footer p {
+  color: white;
+  margin: 0;
+  padding-top: 20px;
 }

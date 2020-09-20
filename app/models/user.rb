@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   require 'securerandom'
+  mount_uploader :image, ImageUploader
+  
   validates :uid, presence: true, uniqueness: true
 
   has_many :links_se, class_name: "Link", foreign_key: "junior_id"

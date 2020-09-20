@@ -19,10 +19,38 @@ before_action :require_user_logged_in, :status_regist
 
   def seniors
     @user = User.find_by(uid: params[:uid])
-    @reviews = @user.reviews
+    @reviews = @user.reviews.order(created_at: "DESC")
   end
 
   def juniors
     @user = User.find_by(uid: params[:uid])
   end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @image = @user.image
+
+    unless user_params[:image] == ""
+      if @user.update(user_params)
+        flash[:notice] = "プロフィールを編集しました"
+        redirect_to("/#{current_user.status}/#{current_user.uid}")
+      else
+        flash.now[:notice] = "プロフィールを編集できませんでした"
+        @user.image = @image
+        @reviews = @user.reviews.order(created_at: "DESC")
+        render("users/#{@user.status}")
+      end
+    else
+      flash.now[:notice] = "プロフィールを編集できませんでした"
+      @user.image = @image
+      @reviews = @user.reviews.order(created_at: "DESC")
+      render("users/#{@user.status}")
+    end
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:image)
+  end
+
 end

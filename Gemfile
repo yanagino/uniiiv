@@ -61,14 +61,26 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#コンソール上で日本語を使用する
 gem 'rb-readline'
+
+#環境変数を設定する
 gem 'dotenv-rails'
+
+#各アプリケーションによるログイン用
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+
+#画像アップロード用
+gem 'carrierwave'
+
 
 #エラーを見やすくできるやつ
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
+
+#画像の大きさをいろいろ指定
+gem "mini_magick"
