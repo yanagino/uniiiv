@@ -1,12 +1,11 @@
-<h1>ユーザー詳細(大学生)</h1>
+<h1><%= @user.name %></h1>
 
-<%= image_tag @user.image.url, class: "icon", alt: "ユーザーアイコン" %>
-<%= render("users/image_upload", user: @user) %>
-
-<p><%= @user.name %></p>
+<%= render("users/name_image", user: @user) %>
 
 <%= render("users/application_button", user: @user) %>
 <%= render("users/review_button", user: @user) %>
+
+<%= render("users/user_profile", user: @user) %>
 
 <h3>高校生からのレビュー一覧</h3>
 <%= render("reviews/review_index.html.erb") %>

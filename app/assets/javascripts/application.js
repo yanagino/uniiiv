@@ -14,3 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+const elem1 = document.getElementById("edit-name-form");
+function edit_name() {
+  elem1.style.display = "block";
+}

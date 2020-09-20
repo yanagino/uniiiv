@@ -1,0 +1,82 @@
+<% if logged_in? %>
+
+  <% if user.status == "seniors" %>
+    <h3>大学で学んでいること</h3>
+    <%= user.content1 %>
+    <h3>高校時代の得意科目・苦手科目</h3>
+    <%= user.content2 %>
+    <h3>おすすめの参考書</h3>
+    <%= user.content3 %>
+    <h3>所属しているサークル・アルバイト</h3>
+    <%= user.content4 %>
+
+    <% if current_user == user %>
+      <%= form_for(user) do |f| %>
+      <%= render("layouts/error_messages", model: f.object) %>
+
+      <div class="form-grpup">
+        <%= f.label :content1, "大学で学んでいること" %>
+        <%= f.text_area :content1 %>
+      </div>
+
+      <div class="form-grpup">
+        <%= f.label :content2, "高校時代の得意科目・苦手科目" %>
+        <%= f.text_area :content2 %>
+      </div>
+
+      <div class="form-grpup">
+        <%= f.label :content3, "おすすめの参考書" %>
+        <%= f.text_area :content3 %>
+      </div>
+
+      <div class="form-grpup">
+        <%= f.label :content4, "所属しているサークル・アルバイト" %>
+        <%= f.text_area :content4 %>
+      </div>
+
+      <%= f.submit "更新", class: "btn btn-profile" %>
+
+      <% end %>
+    <% end %>
+      
+
+  <% elsif user.status == "juniors" %>
+    <h3>志望校</h3>
+    <%= user.content1 %>
+    <h3>大学で学びたいこと</h3>
+    <%= user.content2 %>
+    <h3>悩んでいること</h3>
+    <%= user.content3 %>
+    <h3>大学生に聞いてみたいこと</h3>
+    <%= user.content4 %>
+
+    <% if current_user == user %>
+    <%= form_for(user) do |f| %>
+    <%= render("layouts/error_messages", model: f.object) %>
+
+    <div class="form-grpup">
+      <%= f.label :content1, "志望校" %>
+      <%= f.text_area :content1 %>
+    </div>
+
+    <div class="form-grpup">
+      <%= f.label :content2, "大学で学びたいこと" %>
+      <%= f.text_area :content2 %>
+    </div>
+
+    <div class="form-grpup">
+      <%= f.label :content3, "悩んでいること" %>
+      <%= f.text_area :content3 %>
+    </div>
+
+    <div class="form-grpup">
+      <%= f.label :content4, "大学生に聞いてみたいこと" %>
+      <%= f.text_area :content4 %>
+    </div>
+
+    <%= f.submit "更新", class: "btn btn-profile" %>
+
+    <% end %>
+  <% end %>
+  <% end %>
+<% end %>

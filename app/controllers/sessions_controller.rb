@@ -12,13 +12,11 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
     @user = User.find_by(uid: data[:uid])
     if @user && @user.status
       session[:uid] = @user.uid
-      @user.name = data[:info][:name]
       @user.save
       flash[:notice] = "ログインしました"
       redirect_to("/#{@user.status}/#{@user.uid}")
     elsif @user
       session[:uid] = @user.uid
-      @user.name = data[:info][:name]
       @user.save
       flash[:notice] = "ログインしました"
       redirect_to("/status")

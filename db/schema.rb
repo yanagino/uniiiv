@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_20_082544) do
+ActiveRecord::Schema.define(version: 2020_09_20_105018) do
 
   create_table "links", force: :cascade do |t|
     t.integer "junior_id"
@@ -63,8 +63,7 @@ ActiveRecord::Schema.define(version: 2020_09_20_082544) do
     t.string "school"
     t.string "department"
     t.string "subject"
-    t.integer "grade"
-    t.integer "age"
+    t.string "grade"
     t.text "content1"
     t.text "content2"
     t.text "content3"

@@ -2,13 +2,19 @@ class User < ApplicationRecord
   require 'securerandom'
   mount_uploader :image, ImageUploader
   
+  #バリデーションは以下の通り
   validates :uid, presence: true, uniqueness: true
 
+  validates :content1, length: { maximum: 1000 }
+  validates :content2, length: { maximum: 1000 }
+  validates :content3, length: { maximum: 1000 }
+  validates :content4, length: { maximum: 1000 }
+
+  #モデルの関連付け
   has_many :links_se, class_name: "Link", foreign_key: "junior_id"
   has_many :links_ju, class_name: "Link", foreign_key: "senior_id"
   has_many :seniors, through: :links_se, source: :senior
   has_many :juniors, through: :links_ju, source: :junior
- 
   has_many :reviews, class_name: "Review", foreign_key: "senior_id"
   has_many :reviewings, class_name: "Review", foreign_key: "junior_id"
   has_many :reviewing_seniors, through: :reviewings, source: :senior 
