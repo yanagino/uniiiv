@@ -1,7 +1,0 @@
-<h1>高校生一覧</h1>
-
-<% @users.each do |user| %>
-  <p>・
-    <%= link_to(user.name, "/juniors/#{user.uid}") %>
-  </p>
-<% end %>

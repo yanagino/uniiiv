@@ -5,7 +5,8 @@
 
 <% if current_user == user %>
   <% if seniors? %>
-    <p><input type="button" value="編集" onclick="edit_name()"></p>
+    <p id="edit-name-button"><input type="button" value="編集" onclick="edit_name()"></p>
+    <p id="close-name-button"><input type="button" value="閉じる" onclick="close_name()"></p>
 
     <div id="edit-name-form">
       <%= form_for(user) do |f| %>
@@ -34,19 +35,25 @@
     </div>
 
   <% elsif juniors? %>
-    <%= form_for(user) do |f| %>
-    <%= render("layouts/error_messages", model: f.object) %>
+    <p id="edit-name-button"><input type="button" value="編集" onclick="edit_name()"></p>
+    <p id="close-name-button"><input type="button" value="閉じる" onclick="close_name()"></p>
 
-    <div class="form-group">
-      <%= f.label :grade, "学年" %>
-      <%= f.select :grade, [["高校1年", "高校1年"],["高校2年", "学部2年"],["高校3年", "高校3年"],["浪人生", "浪人生"]] %>
+    <div id="edit-name-form">
+      <%= form_for(user) do |f| %>
+      <%= render("layouts/error_messages", model: f.object) %>
+
+      <div class="form-group">
+        <%= f.label :grade, "学年" %>
+        <%= f.select :grade, [["高校1年", "高校1年"],["高校2年", "高校2年"],["高校3年", "高校3年"],["浪人生", "浪人生"]] %>
+      </div>
+
+      <div class="form-group">
+        <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/gif,image/png' %>
+      </div>
+
+      <%= f.submit '更新', class: 'btn btn-upload' %>
+      <% end %>
     </div>
 
-    <div class="form-group">
-      <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/gif,image/png' %>
-    </div>
-
-    <%= f.submit '更新', class: 'btn btn-upload' %>
-    <% end %>
   <% end %>
 <% end %>

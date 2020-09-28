@@ -9,14 +9,6 @@ before_action :require_user_logged_in, :status_regist
     end
   end
 
-  def ju_index
-    @users = User.where(status: "juniors")
-  end
-
-  def se_index
-    @users = User.where(status: "seniors")
-  end
-
   def seniors
     @user = User.find_by(uid: params[:uid])
     @reviews = @user.reviews.order(created_at: "DESC")

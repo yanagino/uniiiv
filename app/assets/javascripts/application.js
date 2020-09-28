@@ -12,10 +12,31 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+// = require turbolinks
 //= require_tree .
 
-const elem1 = document.getElementById("edit-name-form");
 function edit_name() {
-  elem1.style.display = "block";
+  document.getElementById("edit-name-form").style.display = "block";
+  document.getElementById("close-name-button").style.display = "block";
+  document.getElementById("edit-name-button").style.display = "none";
+}
+
+function close_name() {
+  document.getElementById("edit-name-form").style.display = "none";
+  document.getElementById("close-name-button").style.display = "none";
+  document.getElementById("edit-name-button").style.display = "block";
+}
+
+function edit_profile() {
+  document.getElementById("edit-profile-form").style.display = "block";
+  document.getElementById("close-profile-button").style.display = "block";
+  document.getElementById("edit-profile-button").style.display = "none";
+  document.getElementById("user-profile").style.display = "none";
+}
+
+function close_profile() {
+  document.getElementById("edit-profile-form").style.display = "none";
+  document.getElementById("close-profile-button").style.display = "none";
+  document.getElementById("edit-profile-button").style.display = "block";
+  document.getElementById("user-profile").style.display = "block";
 }
