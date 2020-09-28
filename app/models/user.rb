@@ -4,6 +4,7 @@ class User < ApplicationRecord
   
   #バリデーションは以下の通り
   validates :uid, presence: true, uniqueness: true
+  validates :name, presence: true
 
   validates :content1, length: { maximum: 1000 }
   validates :content2, length: { maximum: 1000 }

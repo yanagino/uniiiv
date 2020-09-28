@@ -2,7 +2,7 @@
   <% unless @reviews.empty? %>
     <% @reviews.each do |review| %>
       <p>評価：<%= review.star %></p>
-      <p>コメント：<%= review.content %></p>
+      <p>コメント：<%= safe_join(review.content.split("\n"),tag(:br)) %></p>
       <% junior = User.find_by(id: review.junior_id) %>
       <p>by <%= junior.name %></p>
       <% if current_user.id == junior.id %>

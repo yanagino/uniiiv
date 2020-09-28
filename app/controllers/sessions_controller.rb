@@ -44,7 +44,7 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
   end
 
   def status
-
+    @user = current_user
   end
 
   def juniors

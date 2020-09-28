@@ -3,13 +3,13 @@
   <% if user.status == "seniors" %>
     <div id="user-profile">
       <h3>大学で学んでいること</h3>
-      <%= user.content1 %>
+      <%=safe_join(user.content1.split("\n"),tag(:br))%>
       <h3>高校時代の得意科目・苦手科目</h3>
-      <%= user.content2 %>
+      <%=safe_join(user.content2.split("\n"),tag(:br))%>
       <h3>おすすめの参考書</h3>
-      <%= user.content3 %>
+      <%=safe_join(user.content3.split("\n"),tag(:br))%>
       <h3>所属しているサークル・アルバイト</h3>
-      <%= user.content4 %>
+      <%=safe_join(user.content4.split("\n"),tag(:br))%>
     </div>
 
     <% if current_user == user %>
@@ -51,13 +51,13 @@
   <% elsif user.status == "juniors" %>
     <div id="user-profile">
       <h3>志望校</h3>
-      <%= user.content1 %>
+      <%=safe_join(user.content1.split("\n"),tag(:br))%>
       <h3>大学で学びたいこと</h3>
-      <%= user.content2 %>
+      <%=safe_join(user.content2.split("\n"),tag(:br))%>
       <h3>悩んでいること</h3>
-      <%= user.content3 %>
+      <%=safe_join(user.content3.split("\n"),tag(:br))%>
       <h3>大学生に聞いてみたいこと</h3>
-      <%= user.content4 %>
+      <%=safe_join(user.content4.split("\n"),tag(:br))%>
     </div>
 
     <% if current_user == user %>

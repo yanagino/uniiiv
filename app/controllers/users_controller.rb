@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-before_action :require_user_logged_in, :status_regist
+before_action :require_user_logged_in
+before_action :status_regist, only: [:index, :seniors, :juniors]
   
   def index
     if juniors?
@@ -21,20 +22,30 @@ before_action :require_user_logged_in, :status_regist
   def update
     @user = User.find_by(id: params[:id])
 
-    if @user.update(user_params)
-      flash[:notice] = "プロフィールを編集しました"
-      redirect_to("/#{current_user.status}/#{current_user.uid}")
+    if params[:status]
+      @user.status = params[:status]
+      if @user.update(user_params) 
+        flash[:notice] = "登録が完了しました"
+        redirect_to("/#{@user.status}/#{@user.uid}")
+      else
+        flash.now[:notice] = "登録できませんでした"
+        render("sessions/status")
+      end
     else
-      flash.now[:notice] = "プロフィールを編集できませんでした"
-      @reviews = @user.reviews.order(created_at: "DESC")
-      render("users/#{@user.status}")
+      if @user.update(user_params) 
+        flash[:notice] = "プロフィールを編集しました"
+        redirect_to("/#{@user.status}/#{@user.uid}")
+      else
+        flash.now[:notice] = "プロフィールの編集に失敗しました"
+        @reviews = @user.reviews.order(created_at: "DESC")
+        render("users/#{@user.status}")
+      end
     end
-
   end
 
   private
   def user_params
-    params.require(:user).permit(:image, :school, :department, :subject, :grade, :content1, :content2, :content3, :content4)
+    params.require(:user).permit(:name, :image, :school, :department, :subject, :grade, :content1, :content2, :content3, :content4)
   end
 
 end

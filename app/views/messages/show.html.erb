@@ -3,11 +3,11 @@
 <% @messages.each do |message| %>
   <% if message.source == "juniors" %>
   <div>
-    <%= @junior_name %>：<%= message.message %>
+    <%= @junior_name %>：<%= safe_join(message.message.split("\n"),tag(:br)) %>
   </div>
   <% elsif message.source == "seniors" %>
   <div>
-    <%= @senior_name %>：<%= message.message %>
+    <%= @senior_name %>：<%= safe_join(message.message.split("\n"),tag(:br)) %>
   </div>
   <% end %>
 <% end %>

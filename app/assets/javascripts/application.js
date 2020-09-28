@@ -40,3 +40,25 @@ function close_profile() {
   document.getElementById("edit-profile-button").style.display = "block";
   document.getElementById("user-profile").style.display = "block";
 }
+
+function junior_regist() {
+  document.getElementById("junior-regist-form").style.display = "block";
+  document.getElementById("junior-regist-button").style.display = "none";
+  document.getElementById("senior-regist-button").style.display = "none";
+  document.getElementById("regist-close-button").style.display = "block";
+}
+
+function senior_regist() {
+  document.getElementById("senior-regist-form").style.display = "block";
+  document.getElementById("senior-regist-button").style.display = "none";
+  document.getElementById("junior-regist-button").style.display = "none";
+  document.getElementById("regist-close-button").style.display = "block";
+}
+
+function regist_close() {
+  document.getElementById("senior-regist-form").style.display = "none";
+  document.getElementById("junior-regist-form").style.display = "none";
+  document.getElementById("senior-regist-button").style.display = "block";
+  document.getElementById("junior-regist-button").style.display = "block";
+  document.getElementById("regist-close-button").style.display = "none";
+}
