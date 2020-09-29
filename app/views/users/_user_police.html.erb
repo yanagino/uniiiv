@@ -1,0 +1,5 @@
+<% unless user == current_user %>
+  <div class="user-police">
+    <%= link_to("通報する","https://docs.google.com/forms/d/e/1FAIpQLSepxXn34MKO-jfdM6Zg8iYmFZAqFDmcZLhehdqoN2RBp-bBaA/viewform?usp=pp_url&entry.374691647=#{user.uid}&entry.229197559=#{current_user.uid}") %>
+  </div>
+<% end %>
