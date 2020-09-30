@@ -84,3 +84,6 @@ end
 
 #画像の大きさをいろいろ指定
 gem "mini_magick"
+
+#LINEログイン用
+gem "omniauth-line", github: "gomo/omniauth-line"

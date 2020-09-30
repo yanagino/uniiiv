@@ -1,12 +1,21 @@
 <h1>申請可能な大学生一覧</h1>
 
+<div class="form">
+  <%= form_tag("/search", method: "GET") do %>
+    <input name="keyword" placeholder="大学名などで検索">
+    <input type="submit" value="検索">
+  <% end %>
+</div>
 
-
-<% @users.each do |user| %>
-    <%= link_to("/seniors/#{user.uid}") do %>
-      <div>
-        <%= image_tag user.image.url, class: "icon", alt: "ユーザーアイコン" %>
-        <%= user.school %> <%= user.department %>
-      </div>
-    <% end %>
+<% unless @users.empty? %>
+  <% @users.each do |user| %>
+      <%= link_to("/seniors/#{user.uid}") do %>
+        <div>
+          <%= image_tag user.image.url, class: "icon", alt: "ユーザーアイコン" %>
+          <%= user.school %> <%= user.department %>
+        </div>
+      <% end %>
+  <% end %>
+<% else %>
+  <p>ヒットしませんでした</p>
 <% end %>

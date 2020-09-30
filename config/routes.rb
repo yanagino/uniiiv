@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "/" => "homes#top"
+  get "/search" => "homes#search"
 
   get '/auth/:provider/callback' => 'sessions#create'
   get "/status" => "sessions#status"
