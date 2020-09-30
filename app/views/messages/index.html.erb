@@ -9,6 +9,7 @@
         <%= link_to(@junior.name, "/messages/#{link.uuid}") %>
       </div>
     <% end %>
+    <%= paginate @junior_links %>
   <% else %>
     <p>現在チャットはご利用できません。</p>
   <% end %>
@@ -21,6 +22,7 @@
         <%= link_to(@senior.name, "/messages/#{link.uuid}") %>
       </div>
     <% end %>
+    <%= paginate @senior_links %>
   <% else %>
     <p>現在チャットはご利用できません。</p>
   <% end %>

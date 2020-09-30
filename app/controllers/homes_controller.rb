@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def top
-    @users = User.where(status: "seniors").where.not(school: nil).where.not(school: "")
+    @users = User.where(status: "seniors").where.not(school: nil).where.not(school: "").page(params[:page]).per(15)
   end
 
   def search

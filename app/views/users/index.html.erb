@@ -8,6 +8,7 @@
           <%= link_to(@senior.name, "/seniors/#{@senior.uid}") %>
         </div>
       <% end %>
+      <%= paginate @links %>
     <% else %>
       <p>まだ申請を送っていません</p>
     <% end %>
@@ -21,6 +22,7 @@
           <%= link_to(@junior.name, "/juniors/#{@junior.uid}") %>
         </div>
       <% end %>
+      <%= paginate @links %>
     <% else %>
       <p>まだ申請がありません</p>
     <% end %>

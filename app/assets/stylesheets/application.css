@@ -68,6 +68,10 @@ img {
   background-color: white;
 }
 
+ul {
+  list-style: none;
+}
+
 .background {
   background-color: rgb(234, 237, 238);
 }

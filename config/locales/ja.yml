@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        grade: 学年
+        image: プロフィール画像
+        content1: 1
+        content2: 2
+        content3: 3
+        content4: 4
+
+      message: 
+        message: メッセージ
+
+      review:
+        star: 評価
+        content: コメント
+
+  views:
+      pagination:
+        first: '最初'
+        last: '最後'
+        previous: '<'
+        next: '>'
+        truncate: '...'

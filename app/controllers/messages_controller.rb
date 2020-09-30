@@ -5,9 +5,9 @@ before_action :correct_user, only: [:show, :create]
   def index
     #メッセージルームが開設されている人のみ表示（linkモデルのchatがapproveになっている人のみ表示させる）
     if seniors?
-      @junior_links = current_user.links_ju.where(chat: "approve")
+      @junior_links = current_user.links_ju.where(chat: "approve").page(params[:page]).per(15)
     elsif juniors?
-      @senior_links = current_user.links_se.where(chat: "approve")
+      @senior_links = current_user.links_se.where(chat: "approve").page(params[:page]).per(15)
     end
   end
 
@@ -17,7 +17,7 @@ before_action :correct_user, only: [:show, :create]
     @junior_name = @link.junior.name
     @senior_name = @link.senior.name
 
-    @messages = @link.messages
+    @messages = @link.messages.page(params[:page]).per(3)
     @message = @link.messages.build
   end
 

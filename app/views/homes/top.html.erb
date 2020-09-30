@@ -2,10 +2,12 @@
 
 <div class="form">
   <%= form_tag("/search", method: "GET") do %>
-    <input name="keyword" placeholder="大学名などで検索">
+    <input name="keyword" placeholder="例)京都大学, 経済学部, 数学 など">
     <input type="submit" value="検索">
   <% end %>
 </div>
+
+<%= paginate @users %>
 
 <% unless @users.empty? %>
   <% @users.each do |user| %>
@@ -16,6 +18,7 @@
         </div>
       <% end %>
   <% end %>
+  <%= paginate @users %>
 <% else %>
   <p>ヒットしませんでした</p>
 <% end %>

@@ -11,6 +11,7 @@
   </div>
   <% end %>
 <% end %>
+<%= paginate @messages %>
 
 <%= form_for @message, url: {action: "create", params: {id: @link.uuid}} do |f| %>
   <%= render("layouts/error_messages", model: f.object) %>

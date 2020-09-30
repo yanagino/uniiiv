@@ -87,3 +87,9 @@ gem "mini_magick"
 
 #LINEログイン用
 gem "omniauth-line", github: "gomo/omniauth-line"
+
+#バリデーションのエラ〜メッセージを日本語かするやつ
+gem 'rails-i18n'
+
+#ページネーション
+gem "kaminari"

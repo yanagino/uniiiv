@@ -4,9 +4,9 @@ before_action :status_regist, only: [:index, :seniors, :juniors]
   
   def index
     if juniors?
-      @links = current_user.links_se.order(created_at: "DESC")
+      @links = current_user.links_se.order(created_at: "DESC").page(params[:page]).per(15)
     elsif seniors?
-      @links = current_user.links_ju.order(created_at: "DESC")
+      @links = current_user.links_ju.order(created_at: "DESC").page(params[:page]).per(15)
     end
   end
 
