@@ -12,7 +12,7 @@ before_action :status_regist, only: [:index, :seniors, :juniors]
 
   def seniors
     @user = User.find_by(uid: params[:uid])
-    @reviews = @user.reviews.order(created_at: "DESC")
+    @reviews = @user.reviews.order(created_at: "DESC").page(params[:page]).per(10)
   end
 
   def juniors
@@ -25,18 +25,18 @@ before_action :status_regist, only: [:index, :seniors, :juniors]
     if params[:status]
       @user.status = params[:status]
       if @user.update(user_params) 
-        flash[:notice] = "登録が完了しました"
+        flash[:success] = "登録が完了しました"
         redirect_to("/#{@user.status}/#{@user.uid}")
       else
-        flash.now[:notice] = "登録できませんでした"
+        flash.now[:danger] = "登録できませんでした"
         render("sessions/status")
       end
     else
       if @user.update(user_params) 
-        flash[:notice] = "プロフィールを編集しました"
+        flash[:success] = "プロフィールを編集しました"
         redirect_to("/#{@user.status}/#{@user.uid}")
       else
-        flash.now[:notice] = "プロフィールの編集に失敗しました"
+        flash.now[:danger] = "プロフィールの編集に失敗しました"
         @reviews = @user.reviews.order(created_at: "DESC")
         render("users/#{@user.status}")
       end

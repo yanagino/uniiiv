@@ -24,15 +24,18 @@
 }
 
 .header {
-  background-color: rgba(3, 71, 116, 0.884);
+  background-color: rgba(238, 83, 11, 0.89);
   color: white;
   text-align: center;
   padding: 0 100px;
 }
 
+a, a:hover, a:visited {
+  text-decoration: none;
+}
+
 .header a {
   color: white;
-  text-decoration: none;
 }
 
 .logo {
@@ -43,6 +46,7 @@
   padding-top: 17px; 
   float: right;
   vertical-align: middle;
+  font-size: 15px;
 }
 
 .header-bar {
@@ -58,7 +62,19 @@
 }
 
 .notice {
-  background-color: brown;
+  background-color: rgb(20, 88, 190);
+  color: white;
+  font-size: 14px;
+}
+
+.success {
+  background-color: rgb(4, 179, 106);
+  color: white;
+  font-size: 14px;
+}
+
+.danger {
+  background-color: rgb(218, 37, 61);
   color: white;
   font-size: 14px;
 }
@@ -73,7 +89,7 @@ ul {
 }
 
 .background {
-  background-color: rgb(234, 237, 238);
+  background-color: #FFF8F0;
 }
 
 .container {
@@ -113,7 +129,7 @@ ul {
 }
 
 footer {
-  background-color: rgba(3, 71, 116, 0.884);
+  background-color: rgb(247, 107, 26);
   height: 70px;
   text-align: center;
 }

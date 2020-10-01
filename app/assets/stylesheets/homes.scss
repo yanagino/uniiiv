@@ -1,3 +1,58 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// トップページのユーザーサムネイル
+.user-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-index {
+  padding: 30px 0;
+  margin: 1.5%;
+  background-color: rgb(252, 252, 252);
+  width: 30%;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 3px 3px 0 rgb(133, 133, 133);
+}
+
+.user-index a {
+  display: block;
+  color: rgba(6, 103, 214, 0.877);
+}
+
+.user-school {
+  margin-top: 10px;
+}
+
+.search-form {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.search-input {
+  width: 90%;
+  height: 45px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: rgba(192, 188, 173, 0.938);
+  padding: 5px 15px;
+}
+
+.search-submit {
+  background-color: rgba(221, 90, 14, 0.87);
+  border: none;
+  color: white;
+  width: 5%;
+  height: 45px;
+  border-radius: 3px;
+}
+
+.no-hit {
+  font-size: 20px;
+  font-weight: bold;
+}

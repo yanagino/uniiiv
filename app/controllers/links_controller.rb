@@ -9,10 +9,10 @@ before_action :status_seniors, only: [:approve, :deny]
     @senior = User.where(status: "seniors").find_by(id: params[:senior_id])
     if @senior
       current_user.request(@senior)
-      flash[:notice] = "申請が完了しました"
+      flash[:success] = "申請が完了しました"
       redirect_back(fallback_location: "/")
     else
-      flash[:notice] = "申請できませんでした"
+      flash[:danger] = "申請できませんでした"
       redirect_to("/")
     end
   end
@@ -27,14 +27,14 @@ before_action :status_seniors, only: [:approve, :deny]
         @link.chat = "approve"
         @link.uuid = SecureRandom.uuid
         @link.save
-        flash[:notice] = "申請を承認しました"
+        flash[:success] = "申請を承認しました"
         redirect_to("/messages/#{@link.uuid}")  
       else
-        flash[:notice] = "承認できませんでした"
+        flash[:danger] = "承認できませんでした"
         redirect_to("/")
       end
     else
-      flash[:notice] = "承認できませんでした"
+      flash[:danger] = "承認できませんでした"
       redirect_to("/")
     end
   end
@@ -45,10 +45,10 @@ before_action :status_seniors, only: [:approve, :deny]
     @junior = User.where(status: "juniors").find_by(uid: params[:id])
     if @junior
       current_user.deny(@junior)
-      flash[:notice] = "申請を否認しました"
+      flash[:success] = "申請を否認しました"
       redirect_back(fallback_location: "/")
     else
-      flash[:notice] = "承認できませんでした"
+      flash[:danger] = "否認できませんでした"
       redirect_to("/")
     end
   end

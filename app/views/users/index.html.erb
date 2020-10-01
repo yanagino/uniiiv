@@ -19,7 +19,7 @@
         <% @id = link.junior_id %>
         <% @junior = User.find_by(id: @id) %>
         <div>
-          <%= link_to(@junior.name, "/juniors/#{@junior.uid}") %>
+          <%= link_to("【#{current_user.answering?(@junior)}】#{@junior.name}", "/juniors/#{@junior.uid}") %>
         </div>
       <% end %>
       <%= paginate @links %>

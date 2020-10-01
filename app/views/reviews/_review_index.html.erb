@@ -1,14 +1,22 @@
 <div class="review-index">
   <% unless @reviews.empty? %>
     <% @reviews.each do |review| %>
-      <p>評価：<%= review.star %></p>
-      <p>コメント：<%= safe_join(review.content.split("\n"),tag(:br)) %></p>
       <% junior = User.find_by(id: review.junior_id) %>
-      <p>by <%= junior.name %></p>
-      <% if current_user.id == junior.id %>
-      <%= render("users/review_edit_button", user: @user, reviwe: review) %>
+
+      <%= image_tag junior.image.url, class: "review-icon", alt: "ユーザーアイコン" %>
+
+      <% review.star.times do %>
+        <i class="fas fa-star"></i>
       <% end %>
+
+      <p><%= safe_join(review.content.split("\n"),tag(:br)) %></p>
+
+      <% if current_user.id == junior.id %>
+        <%= render("users/review_edit_button", user: @user, reviwe: review) %>
+      <% end %>
+
     <% end %>
+    <%= paginate @reviews %>
   <% else %>
     <p>まだレビューはありません。</p>
   <% end %>

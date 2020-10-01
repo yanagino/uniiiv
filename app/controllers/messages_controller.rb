@@ -17,7 +17,7 @@ before_action :correct_user, only: [:show, :create]
     @junior_name = @link.junior.name
     @senior_name = @link.senior.name
 
-    @messages = @link.messages.page(params[:page]).per(3)
+    @messages = @link.messages
     @message = @link.messages.build
   end
 
@@ -28,10 +28,10 @@ before_action :correct_user, only: [:show, :create]
     @message.source = current_user.status
 
     if @message.save 
-    flash[:notice] = "メッセージを送信しました"
+      flash[:success] = "メッセージを送信しました"
       redirect_to("/messages/#{@link.uuid}")
     else
-      flash.now[:notice] = "メッセージの送信に失敗しました"
+      flash.now[:danger] = "メッセージの送信に失敗しました"
       @message.source = nil
       @messages = @link.messages
       @junior_name = @link.junior.name

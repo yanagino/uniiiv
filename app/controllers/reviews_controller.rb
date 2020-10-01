@@ -10,10 +10,10 @@ class ReviewsController < ApplicationController
     @review.senior_id = @senior.id
 
     if @review.save
-      flash[:notice] = "レビューを投稿しました"
+      flash[:success] = "レビューを投稿しました"
       redirect_to("/seniors/#{@senior.uid}")
     else
-      flash.now[:notice] = "レビューの投稿に失敗しました"
+      flash.now[:danger] = "レビューの投稿に失敗しました"
       render("reviews/new")
     end
     
@@ -29,10 +29,10 @@ class ReviewsController < ApplicationController
     @review = current_user.reviewings.find_by(senior_id: @senior.id)
 
     if @review.update(review_params)
-      flash[:notice] = "レビューを編集しました"
+      flash[:success] = "レビューを編集しました"
       redirect_to("/seniors/#{@senior.uid}")
     else
-      flash.now[:notice] = "レビューの編集に失敗しました"
+      flash.now[:danger] = "レビューの編集に失敗しました"
       render("reviews/edit")
     end
   end
@@ -40,10 +40,10 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find_by(id: params[:id])
     if @review.destroy
-      flash[:notice] = "レビューを削除しました"
+      flash[:success] = "レビューを削除しました"
       redirect_back(fallback_location: "/")
     else
-      flash.now[notice] = "レビューの削除に失敗しました"
+      flash.now[:danger] = "レビューの削除に失敗しました"
       render("users/seniors")
     end
   end

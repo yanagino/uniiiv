@@ -5,7 +5,7 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
     data = request.env['omniauth.auth']
 
     unless data[:uid]
-      flash[:notice] = "連携できませんでした"
+      flash[:danger] = "連携できませんでした"
       redirect_to("/")
     end
 
@@ -13,12 +13,12 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
     if @user && @user.status
       session[:uid] = @user.uid
       @user.save
-      flash[:notice] = "ログインしました"
+      flash[:success] = "ログインしました"
       redirect_to("/#{@user.status}/#{@user.uid}")
     elsif @user
       session[:uid] = @user.uid
       @user.save
-      flash[:notice] = "ログインしました"
+      flash[:success] = "ログインしました"
       redirect_to("/status")
     else
       @user = User.new(
@@ -28,17 +28,17 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
       )
       if @user.save
         session[:uid] = @user.uid
-        flash[:notice] = "ユーザー登録しました"
+        flash[:success] = "ユーザー登録しました"
         redirect_to("/status")
       else
-        flash[:notice] = "連携できませんでした"
+        flash[:danger] = "連携できませんでした"
         redirect_to("/")
       end
     end
   end
 
   def destroy
-    flash[:notice] = "ログアウトしました"
+    flash[:success] = "ログアウトしました"
     session[:uid] = nil
     redirect_to("/")
   end
@@ -53,10 +53,10 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
     if @user
       @user.status = "juniors"
       @user.save
-      flash[:notice] = "高校生として登録しました"
+      flash[:success] = "高校生として登録しました"
       redirect_to("/juniors/#{@user.uid}")
     else
-      flash[:notice] = "登録できませんでした"
+      flash[:danger] = "登録できませんでした"
       redirect_to("/")
     end
   end
@@ -67,10 +67,10 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
     if @user
       @user.status = "seniors"
       @user.save
-      flash[:notice] = "大学生として登録しました"
+      flash[:success] = "大学生として登録しました"
       redirect_to("/seniors/#{@user.uid}")
     else
-      flash[:notice] = "登録できませんでした"
+      flash[:danger] = "登録できませんでした"
       redirect_to("/")
     end
   end

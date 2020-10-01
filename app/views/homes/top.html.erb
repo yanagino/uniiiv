@@ -1,24 +1,34 @@
 <h1>申請可能な大学生一覧</h1>
 
-<div class="form">
+<div class="row">
   <%= form_tag("/search", method: "GET") do %>
-    <input name="keyword" placeholder="例)京都大学, 経済学部, 数学 など">
-    <input type="submit" value="検索">
+    <div class="col-sx-10 col-sm-8 col-md-10 search-form">
+      <input name="keyword" placeholder="例)京都大学, 経済学部, 数学 など" class="search-input">
+      <input type="submit" value="検索" class="search-submit">
+    </div>
   <% end %>
 </div>
 
-<%= paginate @users %>
-
 <% unless @users.empty? %>
-  <% @users.each do |user| %>
-      <%= link_to("/seniors/#{user.uid}") do %>
-        <div>
+  <div class="user-flex">
+    <% @users.each do |user| %>
+      <div class="user-index">
+        <%= link_to("/seniors/#{user.uid}") do %>
           <%= image_tag user.image.url, class: "icon", alt: "ユーザーアイコン" %>
-          <%= user.school %> <%= user.department %>
-        </div>
-      <% end %>
-  <% end %>
+          <div class="user-school">
+            <%= user.school %>
+          </div>
+          <div class="user-department">
+            <%= user.department %>
+          </div>
+          <div class="user-name">
+            <%= user.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <%= paginate @users %>
 <% else %>
-  <p>ヒットしませんでした</p>
+  <p class="no-hit">ヒットしませんでした</p>
 <% end %>

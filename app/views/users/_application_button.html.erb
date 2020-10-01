@@ -2,7 +2,7 @@
   <% unless current_user.requesting?(user) %>
     <%= form_for(current_user.links_se.build) do |f| %>
       <%= hidden_field_tag :senior_id, user.id %>
-      <%= f.submit '申請する', class: "btn btn-applicate" %>
+      <%= f.submit '申請する', class: "btn btn-applicate", data: { confirm: "#{user.name}さんに申請しますか？"} %>
     <% end %>
   <% else %>
     <div class="btn btn-disable">申請済</div>
