@@ -155,12 +155,12 @@ ul {
 }
 
 .btn-approve {
-  background-color: rgb(202, 4, 4);
+  background-color: rgb(202, 4, 96);
 }
 
 .btn-deny {
-  color: rgb(0, 132, 255);
-  background-color: white;
+  color: white;
+  background-color: rgb(141, 190, 247);
 }
 
 .btn-upload {
@@ -169,7 +169,7 @@ ul {
   border: none;
   border-radius: 100px;
   font-size: 20px;
-  padding: 5px 100px;
+  padding: 7px 100px;
   margin-top: 10px;
 }
 

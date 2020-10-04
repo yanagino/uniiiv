@@ -13,8 +13,12 @@
         <%= image_tag junior.image.url, class: "review-icon", alt: "ユーザーアイコン" %>
 
         <% review.star.times do %>
-        <i class="fas fa-star"></i>
+          <span class="review-star"><i class="fas fa-star"></i></span>
         <% end %>
+        <% (5 - review.star).times do %>
+          <span class="review-non-star"><i class="far fa-star"></i></span>
+        <% end %>
+
       </div>
 
       <div class="review-content">

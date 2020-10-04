@@ -1,17 +1,28 @@
+<h2><%= @senior.name %>さんへのレビュー</h2>
+
 <%= form_for(review) do |f| %>
 
   <%= render("layouts/error_messages", model: f.object) %>
 
-  <h3>レビュー：１〜５点</h3>
-  <%= f.radio_button :star, 1 %>1
-  <%= f.radio_button :star, 2 %>2
-  <%= f.radio_button :star, 3 %>3
-  <%= f.radio_button :star, 4 %>4
-  <%= f.radio_button :star, 5 %>5
+  <h3>【総合評価】</h3>
+  <div class="star-form">
+    <%= f.radio_button :star, 5 %>
+    <label for="review_star_5"><i class="fas fa-star"></i></label>
+    <%= f.radio_button :star, 4 %>
+    <label for="review_star_4"><i class="fas fa-star"></i></label>
+    <%= f.radio_button :star, 3 %>
+    <label for="review_star_3"><i class="fas fa-star"></i></label>
+    <%= f.radio_button :star, 2 %>
+    <label for="review_star_2"><i class="fas fa-star"></i></label>
+    <%= f.radio_button :star, 1 %>
+    <label for="review_star_1"><i class="fas fa-star"></i></label>
+  </div>
 
-  <h3>コメント</h3>
-  <%= f.text_area :content %>
-  <%= f.hidden_field :senior_id, value: @senior.id %>
+  <h3>【レビュー（500文字以内）】</h3>
+  <div class="form-group">
+    <%= f.text_area :content, class: "form-control" %>
+    <%= f.hidden_field :senior_id, value: @senior.id %>
+  </div>
 
-  <%= f.submit "送信" %>
+  <%= f.submit "送信", class: "btn-upload" %>
 <% end %>

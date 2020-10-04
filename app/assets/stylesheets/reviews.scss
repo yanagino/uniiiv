@@ -2,6 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// レビューフォーム
+.star-form {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.star-form input[type="radio"] {
+  display: none;
+}
+
+.star-form .fa-star {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.star-form input[type='radio']:checked ~ label {
+  color: rgb(255, 174, 0);
+}
+
+.review-form .form-control {
+  margin: 0 auto;
+  width: 60%;
+  height: 100px;
+}
+
+.review-form h3 {
+  margin-top: 40px;
+}
+
+.review-form .form-control {
+  margin: 0 auto;
+  width: 60%;
+  height: 100px;
+}
+
+
+// ユーザー詳細ページでのレビュー
 .review-index {
   float: right;
   width: 40%;
@@ -27,7 +65,13 @@
   -webkit-user-drag: none;
 }
 
-.fa-star {
+.review-star {
+  color: rgb(255, 174, 0);
+  font-size: 23px;
+  vertical-align: middle;
+}
+
+.review-non-star {
   color: rgb(255, 174, 0);
   font-size: 23px;
   vertical-align: middle;
