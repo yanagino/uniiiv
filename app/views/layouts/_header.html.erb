@@ -9,8 +9,11 @@
           <span class="header-bar">|</span>
           <%= link_to("メッセージ", "/messages") %>
           <span class="header-bar">|</span>
+        <% else %>
+          <%= link_to("ステータス登録", "/status") %>
+          <span class="header-bar">|</span>
         <% end %>
-        <%= link_to("ログアウト", "/logout", method: "POST", data: { confirm: "ログアウトしますか？" }) %>
+          <%= link_to("ログアウト", "/logout", method: "POST", data: { confirm: "ログアウトしますか？" }) %>
       </div>
       <div class="clear"></div>
     <% else %>

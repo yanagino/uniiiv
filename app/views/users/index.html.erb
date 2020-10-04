@@ -1,5 +1,5 @@
 <% if juniors? %>
-  <h1>大学生への申請一覧</h1>
+  <h2>大学生への申請一覧</h2>
     <% unless @links.empty? %>
       <% @links.each do |link| %>
         <% @id = link.senior_id %>
@@ -13,7 +13,7 @@
       <p>まだ申請を送っていません</p>
     <% end %>
 <% elsif seniors? %>
-  <h1>高校生からの申請一覧</h1>
+  <h2>高校生からの申請一覧</h2>
     <% unless @links.empty? %>
       <% @links.each do |link| %>
         <% @id = link.junior_id %>

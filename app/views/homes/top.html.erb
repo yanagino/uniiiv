@@ -1,10 +1,12 @@
-<h1>申請可能な大学生一覧</h1>
+<h2>申請可能な大学生一覧</h2>
 
 <div class="row">
   <%= form_tag("/search", method: "GET") do %>
     <div class="col-sx-10 col-sm-8 col-md-10 search-form">
       <input name="keyword" placeholder="例)京都大学, 経済学部, 数学 など" class="search-input">
-      <input type="submit" value="検索" class="search-submit">
+      <%= button_tag type: "submit", class: "search-submit" do %>
+        <span class="fa fa-search"></span> 検索
+      <% end %>
     </div>
   <% end %>
 </div>

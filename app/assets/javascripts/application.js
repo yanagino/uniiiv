@@ -60,6 +60,7 @@ function junior_regist() {
   document.getElementById("junior-regist-button").style.display = "none";
   document.getElementById("senior-regist-button").style.display = "none";
   document.getElementById("regist-close-button").style.display = "block";
+  document.getElementById("status-step2").style.display = "block";
 }
 
 function senior_regist() {
@@ -67,12 +68,15 @@ function senior_regist() {
   document.getElementById("senior-regist-button").style.display = "none";
   document.getElementById("junior-regist-button").style.display = "none";
   document.getElementById("regist-close-button").style.display = "block";
+  document.getElementById("status-step2").style.display = "block";
 }
 
 function regist_close() {
   document.getElementById("senior-regist-form").style.display = "none";
   document.getElementById("junior-regist-form").style.display = "none";
-  document.getElementById("senior-regist-button").style.display = "block";
-  document.getElementById("junior-regist-button").style.display = "block";
+  document.getElementById("senior-regist-button").style.display = "inline-block";
+  document.getElementById("junior-regist-button").style.display = "inline-block";
   document.getElementById("regist-close-button").style.display = "none";
+  document.getElementById("status-step1").style.display = "block";
+  document.getElementById("status-step2").style.display = "none";
 }

@@ -88,6 +88,13 @@ a, a:hover, a:visited {
   font-size: 14px;
 }
 
+h2 {
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid orange;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
 .icon {
   border-radius: 100px;
   background-color: white;

@@ -1,107 +1,118 @@
-<h1>アカウント登録</h1>
+<div class="regist">
 
-  <p id="junior-regist-button"><input type="button" value="高校生" onclick="junior_regist()"></p>
-  <p id="senior-regist-button"><input type="button" value="大学生" onclick="senior_regist()"></p>
-  <p id="regist-close-button"><input type="button" value="選び直す" onclick="regist_close()"></p>
+<h2>アカウント登録</h2>
 
+<h3 id="status-step1">STEP1:【高校生】か【大学生】かを選択してください</h3>
 
-  <div id="junior-regist-form">
-    <%= form_for(@user) do |f| %>
-    <%= render("layouts/error_messages", model: f.object) %>
+<p id="junior-regist-button"><input type="button" value="高校生" class="status-btn junior-regist-button" onclick="junior_regist()"></p>
+<p id="senior-regist-button"><input type="button" value="大学生" class="status-btn senior-regist-button" onclick="senior_regist()"></p>
+<p id="regist-close-button"><input type="button" value="選び直す" class="status-btn regist-close-button" onclick="regist_close()"></p>
 
-    <div class="form-group">
-      <%= f.label :name, "名前" %>
-      <%= f.text_field :name %>
-    </div>
+<h3 id="status-step2">STEP2:ユーザー情報を入力してください</h3>
 
-    <div class="form-group">
-      <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/gif,image/png' %>
-    </div>
+<%# 高校生用の登録フォーム----------------------------------------- %>
+<div id="junior-regist-form">
+  <%= form_for(@user) do |f| %>
+  <%= render("layouts/error_messages", model: f.object) %>
 
-    <div class="form-group">
-      <%= f.label :grade, "学年" %>
-      <%= f.select :grade, [["高校1年", "高校1年"],["高校2年", "高校2年"],["高校3年", "高校3年"],["浪人生", "浪人生"]] %>
-    </div>
-
-    <div class="form-grpup">
-      <%= f.label :content1, "志望校" %>
-      <%= f.text_area :content1 %>
-    </div>
-
-    <div class="form-grpup">
-      <%= f.label :content2, "大学で学びたいこと" %>
-      <%= f.text_area :content2 %>
-    </div>
-
-    <div class="form-grpup">
-      <%= f.label :content3, "悩んでいること" %>
-      <%= f.text_area :content3 %>
-    </div>
-
-    <div class="form-grpup">
-      <%= f.label :content4, "大学生に聞いてみたいこと" %>
-      <%= f.text_area :content4 %>
-    </div>
-
-    <%= hidden_field_tag :status, "juniors" %>
-    <%= f.submit "登録", class: 'btn btn-profile' %>
-    <% end %>
+  <div class="status-image">
+    <%= f.label :image, "プロフィール画像" %>
+    <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/gif,image/png' %>
   </div>
 
-  <div id="senior-regist-form">
-    <%= form_for(@user) do |f| %>
-    <%= render("layouts/error_messages", model: f.object) %>
-
-    <div class="form-group">
-      <%= f.label :name, "名前" %>
-      <%= f.text_field :name %>
-    </div>
-
-    <div class="form-group">
-      <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/gif,image/png' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :school, "大学" %>
-      <%= f.text_field :school %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :department, "学部" %>
-      <%= f.text_field :department %>
-    </div>
-      
-    <div class="form-group">
-      <%= f.label :subject, "学科" %>
-      <%= f.text_field :subject %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :grade, "学年" %>
-      <%= f.select :grade, [["学部1年", "学部1年"],["学部2年", "学部2年"],["学部3年", "学部3年"],["学部4年", "学部4年"], ["その他", "その他"]] %>
-    </div>
-
-    <div class="form-grpup">
-      <%= f.label :content1, "大学で学んでいること" %>
-      <%= f.text_area :content1 %>
-    </div>
-
-    <div class="form-grpup">
-      <%= f.label :content2, "高校時代の得意科目・苦手科目" %>
-      <%= f.text_area :content2 %>
-    </div>
-
-    <div class="form-grpup">
-      <%= f.label :content3, "おすすめの参考書" %>
-      <%= f.text_area :content3 %>
-    </div>
-
-    <div class="form-grpup">
-      <%= f.label :content4, "所属しているサークル・アルバイト" %>
-      <%= f.text_area :content4 %>
-    </div>
-
-    <%= hidden_field_tag :status, "seniors" %>
-    <%= f.submit "更新", class: "btn btn-profile" %>
-    <% end %>
+  <div class="form-group">
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :grade, "学年" %>
+    <%= f.select :grade, [["高校1年", "高校1年"],["高校2年", "高校2年"],["高校3年", "高校3年"],["浪人生", "浪人生"]], {}, { class: "form-control"} %>
+  </div>
+
+  <div class="form-grpup">
+    <%= f.label :content1, "志望校" %>
+    <%= f.text_area :content1, class: "form-control text-area" %>
+  </div>
+
+  <div class="form-grpup">
+    <%= f.label :content2, "大学で学びたいこと" %>
+    <%= f.text_area :content2, class: "form-control text-area" %>
+  </div>
+
+  <div class="form-grpup">
+    <%= f.label :content3, "悩んでいること" %>
+    <%= f.text_area :content3, class: "form-control text-area" %>
+  </div>
+
+  <div class="form-grpup">
+    <%= f.label :content4, "大学生に聞きたいこと" %>
+    <%= f.text_area :content4, class: "form-control text-area" %>
+  </div>
+
+  <%= hidden_field_tag :status, "juniors" %>
+  <%= f.submit "登録", class: 'btn btn-profile' %>
+  <% end %>
+</div>
+
+<%# 大学生用の登録フォーム----------------------------------------- %>
+<div id="senior-regist-form">
+  <%= form_for(@user) do |f| %>
+  <%= render("layouts/error_messages", model: f.object) %>
+
+  <div class="form-group">
+    <%= f.label :image, "プロフィール画像" %>
+    <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/gif,image/png' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :school, "大学" %>
+    <%= f.text_field :school, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :department, "学部" %>
+    <%= f.text_field :department, class: "form-control" %>
+  </div>
+    
+  <div class="form-group">
+    <%= f.label :subject, "学科" %>
+    <%= f.text_field :subject, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :grade, "学年" %>
+    <%= f.select :grade, [["学部1年", "学部1年"],["学部2年", "学部2年"],["学部3年", "学部3年"],["学部4年", "学部4年"], ["その他", "その他"]], {}, { class: "form-control" } %>
+  </div>
+
+  <div class="form-grpup">
+    <%= f.label :content1, "大学で学んでいること" %>
+    <%= f.text_area :content1, class: "form-control text-area" %>
+  </div>
+
+  <div class="form-grpup">
+    <%= f.label :content2, "高校時代の得意科目・苦手科目" %>
+    <%= f.text_area :content2, class: "form-control text-area" %>
+  </div>
+
+  <div class="form-grpup">
+    <%= f.label :content3, "おすすめの参考書" %>
+    <%= f.text_area :content3, class: "form-control text-area" %>
+  </div>
+
+  <div class="form-grpup">
+    <%= f.label :content4, "所属しているサークル・アルバイト" %>
+    <%= f.text_area :content4, class: "form-control text-area" %>
+  </div>
+
+  <%= hidden_field_tag :status, "seniors" %>
+  <%= f.submit "更新", class: "btn btn-profile" %>
+  <% end %>
+</div>
+
+</div>

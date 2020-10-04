@@ -10,6 +10,75 @@
   display: none;
 }
 
+#status-step2 {
+  display: none;
+}
+
 #regist-close-button {
   display: none;
+}
+
+// status登録ページ---------------------------------------
+.regist h3 {
+  font-size: 19px;
+  margin-bottom: 25px;
+}
+
+#junior-regist-button {
+  display: inline-block;
+  width: 15%;
+  margin-right: 40px;
+}
+
+#senior-regist-button {
+  display: inline-block;
+  width: 15%;
+}
+
+.status-btn {
+  color: white;
+  border-radius: 100px;
+  font-size: 20px;
+  padding: 12px 45px;
+  text-decoration: none;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.junior-regist-button {
+  background-color: rgb(129, 185, 15);
+}
+
+.senior-regist-button {
+  background-color: #172852;
+}
+
+.regist-close-button {
+  background-color: gray;
+}
+
+.regist label {
+  text-align: right;
+  display: inline-block;
+  width: 25%;
+  font-size: 18px;
+  vertical-align: middle;
+  margin-right: 5%;
+}
+
+.regist .form-control {
+  margin: 20px 0;
+  display: inline-block;
+  width: 60%;
+  vertical-align: middle;
+}
+
+.regist .text-area {
+  height: 100px;
+}
+
+.status-image {
+  width: 60%;
+  display: inline-block;
+  margin: 0 auto;
 }

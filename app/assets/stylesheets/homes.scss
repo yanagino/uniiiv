@@ -33,13 +33,14 @@
 }
 
 .search-input {
-  width: 90%;
+  width: 60%;
   height: 45px;
   font-size: 16px;
   border: none;
   outline: none;
-  border-radius: 10px;
-  background-color: rgba(192, 188, 173, 0.938);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background-color: rgba(212, 209, 198, 0.938);
   padding: 5px 15px;
 }
 
@@ -47,9 +48,11 @@
   background-color: rgba(221, 90, 14, 0.87);
   border: none;
   color: white;
-  width: 5%;
+  width: 10%;
   height: 45px;
-  border-radius: 3px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  font-size: 16px;
 }
 
 .no-hit {
