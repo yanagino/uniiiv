@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 #edit-name-form {
   display: none;
 }
@@ -17,4 +16,126 @@
 
 #close-profile-button {
   display: none;
+}
+
+// ユーザー詳細ページ（seniors,juniors）
+.user-show-top {
+  background: #f8f0de;
+  border-left: 5px dotted rgba(0,0,0,.1);
+  box-shadow: 0 0 0 5 #f8f0d7;
+  padding: 2em 1em 0.3em 1em;
+  width: 70%;
+  margin: 50px auto;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+}
+
+.user-show-top h2 {
+  margin: 0; 
+  padding: 0;
+}
+
+.user-image {
+  margin-top: 50px;
+}
+
+.icon-profile {
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.image-form {
+  margin-top: 10px;
+}
+
+.user-name h2 {
+  font-weight: bold;
+}
+
+.user-school-2 {
+  margin-bottom: 5px;
+}
+
+.user-police {
+  text-align: right;
+  margin: 10px 10px 0 0;
+}
+
+.user-profile {
+  width: 55%;
+  float: left;
+}
+
+.blank-5 {
+  float: left;
+  width: 5%;
+}
+
+.table {
+  margin-bottom: 45px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+#user-profile thead {
+  background-color: rgb(194, 189, 178);
+  color: rgb(14, 13, 13);
+  font-size: 20px;
+}
+
+#user-profile tbody td {
+  background-color: rgb(253, 253, 253);
+  font-size: 17px;
+  padding: 30px 20px;
+  font-weight: bold;
+}
+
+#edit-profile-button .edit-profile-button {
+  background-color: orangered;
+}
+
+#close-profile-button .close-profile-button {
+  background-color: rgb(94, 94, 94);
+}
+
+#edit-name-button .edit-name-button {
+  background-color: orangered;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+#close-name-button .close-name-button {
+  background-color: rgb(94, 94, 94);
+  margin-right: 20px;
+}
+
+.clear-right {
+  clear: right;
+}
+
+// プロフィー編集フォーム
+#edit-profile-form label {
+  display: block;
+  font-size: 20px;
+  font-weight: normal;
+  background-color: rgb(194, 189, 178);
+  background-color: rgb(194, 189, 178);
+  color: rgb(14, 13, 13);
+  padding: 8px 0;
+  margin-bottom: 0;
+}
+
+#edit-profile-form .form-control {
+  margin: 0 0 45px 0;
+  height: 100px;
+  background-color: rgb(252, 252, 252);
+}
+
+#edit-name-form label {
+  font-size: 17px;
+  margin-right: 20px;
+}
+
+#edit-name-form .form-control {
+  width: 80%;
+  display: inline-block;
 }

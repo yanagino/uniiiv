@@ -24,10 +24,13 @@
 }
 
 .header {
-  background-color: rgba(238, 83, 11, 0.89);
-  color: white;
+  background-color: #fff8f0c7;
+  color: orangered;
   text-align: center;
   padding: 0 100px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 
 a, a:hover, a:visited {
@@ -35,7 +38,8 @@ a, a:hover, a:visited {
 }
 
 .header a {
-  color: white;
+  color: orangered;
+  font-weight: bold;
 }
 
 .logo {
@@ -58,12 +62,17 @@ a, a:hover, a:visited {
 }
 
 .flash {
+  color: white;
   text-align: center;
+  margin-top: 55px;
+  height: 28px;
+  line-height: 28px;
+  position: absolute;
+  width: 100%;
 }
 
 .notice {
   background-color: rgb(20, 88, 190);
-  color: white;
   font-size: 14px;
 }
 
@@ -79,7 +88,7 @@ a, a:hover, a:visited {
   font-size: 14px;
 }
 
-img {
+.icon {
   border-radius: 100px;
   background-color: white;
 }
@@ -93,7 +102,7 @@ ul {
 }
 
 .container {
-  padding: 30px 0 100px 0 ;
+  padding: 110px 0 100px 0 ;
   max-width: 1170px;
   margin: 0 auto;
   text-align: center;
@@ -109,6 +118,31 @@ ul {
   font-size: 20px;
   padding: 10px 100px;
   text-decoration: none;
+}
+
+.btn, .btn:hover, .bth:visited, .btn:focus {
+  text-decoration: none;
+  color: white;
+  outline: 0;
+}
+
+.edit-btn {
+  display: block;
+  width: 15%;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border: none;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.edit-btn a, .edit-btn a:hover, .edit-bth a:visited, .edit-btn a:focus {
+  text-decoration: none;
+  color: white;
+  outline: 0;
 }
 
 .btn-applicate:hover {
@@ -128,6 +162,39 @@ ul {
   background-color: white;
 }
 
+.btn-upload {
+  background-color: rgba(31, 141, 4, 0.863);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 20px;
+  padding: 5px 100px;
+  margin-top: 10px;
+}
+
+.btn-review-edit {
+  display: inline-block;
+  color: white;
+  background-color: rgba(31, 141, 4, 0.863);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 17px;
+  margin: 0 20px 20px 0;
+}
+
+.btn-review-delete {
+  display: inline-block;
+  color: white;
+  background-color: rgba(204, 6, 49, 0.863);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 17px;
+}
+
+.btn-review-edit:hover, .btn-review-delete:hover {
+  color: white;
+}
+
 footer {
   background-color: rgb(247, 107, 26);
   height: 70px;
@@ -137,5 +204,5 @@ footer {
 footer p {
   color: white;
   margin: 0;
-  padding-top: 20px;
+  padding-top: 28px;
 }

@@ -12,7 +12,7 @@ before_action :status_regist, only: [:index, :seniors, :juniors]
 
   def seniors
     @user = User.find_by(uid: params[:uid])
-    @reviews = @user.reviews.order(created_at: "DESC").page(params[:page]).per(10)
+    @reviews = @user.reviews.order(created_at: "DESC").page(params[:page]).per(5)
   end
 
   def juniors
@@ -32,12 +32,18 @@ before_action :status_regist, only: [:index, :seniors, :juniors]
         render("sessions/status")
       end
     else
-      if @user.update(user_params) 
-        flash[:success] = "プロフィールを編集しました"
-        redirect_to("/#{@user.status}/#{@user.uid}")
+      if params[:user]
+        if @user.update(user_params) 
+          flash[:success] = "プロフィールを編集しました"
+          redirect_to("/#{@user.status}/#{@user.uid}")
+        else
+          flash.now[:danger] = "プロフィールの編集に失敗しました"
+          @reviews = @user.reviews.order(created_at: "DESC").page(params[:page]).per(5)
+          render("users/#{@user.status}")
+        end
       else
         flash.now[:danger] = "プロフィールの編集に失敗しました"
-        @reviews = @user.reviews.order(created_at: "DESC")
+        @reviews = @user.reviews.order(created_at: "DESC").page(params[:page]).per(5)
         render("users/#{@user.status}")
       end
     end
@@ -45,7 +51,9 @@ before_action :status_regist, only: [:index, :seniors, :juniors]
 
   private
   def user_params
-    params.require(:user).permit(:name, :image, :school, :department, :subject, :grade, :content1, :content2, :content3, :content4)
+    unless params[:user].nil?
+      params.require(:user).permit(:name, :image, :school, :department, :subject, :grade, :content1, :content2, :content3, :content4)
+    end
   end
 
 end

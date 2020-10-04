@@ -15,16 +15,30 @@
 // = require turbolinks
 //= require_tree .
 
+function edit_image() {
+  document.getElementById("edit-image-form").style.display = "block";
+  document.getElementById("close-image-button").style.display = "block";
+  document.getElementById("edit-image-button").style.display = "none";
+}
+
+function close_image() {
+  document.getElementById("edit-image-form").style.display = "none";
+  document.getElementById("close-image-button").style.display = "none";
+  document.getElementById("edit-image-button").style.display = "block";
+}
+
 function edit_name() {
   document.getElementById("edit-name-form").style.display = "block";
   document.getElementById("close-name-button").style.display = "block";
   document.getElementById("edit-name-button").style.display = "none";
+  document.getElementById("user-school-id").style.display = "none";
 }
 
 function close_name() {
   document.getElementById("edit-name-form").style.display = "none";
   document.getElementById("close-name-button").style.display = "none";
   document.getElementById("edit-name-button").style.display = "block";
+  document.getElementById("user-school-id").style.display = "block";
 }
 
 function edit_profile() {

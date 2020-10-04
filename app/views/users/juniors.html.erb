@@ -1,8 +1,14 @@
-<h1><%= @user.name %></h1>
+<div class="user-show">
+  <%= render("users/user_image", user: @user) %>
 
-<%= render("users/name_image", user: @user) %>
-<%= render("users/user_police", user: @user) %>
+  <%= render("users/user_name", user: @user) %>
 
-<%= render("users/answer_button", user: @user) %>
+  <%= render("users/answer_button", user: @user) %>
 
-<%= render("users/user_profile", user: @user) %>
+  <%= render("users/user_profile", user: @user) %>
+  
+  <div class="user-police">
+    <%= render("users/user_police", user: @user) %>
+  </div>
+
+</div>

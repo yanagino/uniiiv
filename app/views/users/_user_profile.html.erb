@@ -1,20 +1,11 @@
 <% if logged_in? %>
 
   <% if user.status == "seniors" %>
-    <div id="user-profile">
-      <h3>大学で学んでいること</h3>
-      <%=safe_join(user.content1.split("\n"),tag(:br))%>
-      <h3>高校時代の得意科目・苦手科目</h3>
-      <%=safe_join(user.content2.split("\n"),tag(:br))%>
-      <h3>おすすめの参考書</h3>
-      <%=safe_join(user.content3.split("\n"),tag(:br))%>
-      <h3>所属しているサークル・アルバイト</h3>
-      <%=safe_join(user.content4.split("\n"),tag(:br))%>
-    </div>
-
     <% if current_user == user %>
-      <p id="edit-profile-button"><input type="button" value="編集" onclick="edit_profile()"></p>
-      <p id="close-profile-button"><input type="button" value="閉じる" onclick="close_profile()"></p>
+      <p id="edit-profile-button"><input type="button" value="編集"  class="edit-btn edit-profile-button" onclick="edit_profile()"></p>
+      <p id="close-profile-button"><input type="button" value="閉じる"  class="edit-btn close-profile-button" onclick="close_profile()"></p>
+      <div class="clear-right"></div>
+
   
       <div id="edit-profile-form">
         <%= form_for(user) do |f| %>
@@ -22,31 +13,48 @@
 
         <div class="form-grpup">
           <%= f.label :content1, "大学で学んでいること" %>
-          <%= f.text_area :content1 %>
+          <%= f.text_area :content1, class: "form-control" %>
         </div>
 
         <div class="form-grpup">
           <%= f.label :content2, "高校時代の得意科目・苦手科目" %>
-          <%= f.text_area :content2 %>
+          <%= f.text_area :content2, class: "form-control" %>
         </div>
 
         <div class="form-grpup">
           <%= f.label :content3, "おすすめの参考書" %>
-          <%= f.text_area :content3 %>
+          <%= f.text_area :content3, class: "form-control" %>
         </div>
 
         <div class="form-grpup">
           <%= f.label :content4, "所属しているサークル・アルバイト" %>
-          <%= f.text_area :content4 %>
+          <%= f.text_area :content4, class: "form-control" %>
         </div>
 
         <%= f.submit "更新", class: "btn btn-profile" %>
 
         <% end %>
       </div>
-
     <% end %>
-      
+
+    <div id="user-profile">
+      <table class="table">
+        <thead><tr><td>大学で学んでいること</td></tr></thead>
+        <tbody><tr><td><%=safe_join(user.content1.split("\n"),tag(:br))%></td></tr></tbody>
+      </table>
+      <table class="table">
+        <thead><tr><td>高校時代の得意科目・苦手科目</td></tr></thead>
+        <tbody><tr><td><%=safe_join(user.content2.split("\n"),tag(:br))%></td></tr></tbody>
+      </table>
+      <table class="table">
+        <thead><tr><td>おすすめの参考書</td></tr></thead>
+        <tbody><tr><td><%=safe_join(user.content3.split("\n"),tag(:br))%></td></tr></tbody>
+      </table>
+      <table class="table">
+        <thead><tr><td>所属しているサークル・アルバイト</td></tr></thead>
+        <tbody><tr><td><%=safe_join(user.content4.split("\n"),tag(:br))%></td></tr></tbody>
+      </table>
+    </div>
 
   <% elsif user.status == "juniors" %>
     <div id="user-profile">

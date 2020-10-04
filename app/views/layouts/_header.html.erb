@@ -10,7 +10,7 @@
           <%= link_to("メッセージ", "/messages") %>
           <span class="header-bar">|</span>
         <% end %>
-        <%= link_to("ログアウト", "/logout", method: "POST") %>
+        <%= link_to("ログアウト", "/logout", method: "POST", data: { confirm: "ログアウトしますか？" }) %>
       </div>
       <div class="clear"></div>
     <% else %>

@@ -1,0 +1,68 @@
+<div class="user-name">
+  <h2><%= @user.name %></h2>
+</div>
+
+<% if current_user == user %>
+  <% if seniors? %>
+    <p id="edit-name-button"><input type="button" value="編集" class="edit-btn edit-name-button" onclick="edit_name()"></p>
+    <p id="close-name-button"><input type="button" value="閉じる" class="edit-btn close-name-button"onclick="close_name()"></p>
+    <div class="clear-right"></div>
+
+    <div id="edit-name-form">
+      <%= form_for(user) do |f| %>
+      <%= render("layouts/error_messages", model: f.object) %>
+
+      <div class="form-group">
+        <%= f.label :school, "大学" %>
+        <%= f.text_field :school, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :department, "学部" %>
+        <%= f.text_field :department, class: "form-control" %>
+      </div>
+        
+      <div class="form-group">
+        <%= f.label :subject, "学科" %>
+        <%= f.text_field :subject, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :grade, "学年" %>
+        <%= f.select :grade, [["学部1年", "学部1年"],["学部2年", "学部2年"],["学部3年", "学部3年"],["学部4年", "学部4年"], ["その他", "その他"]], {}, { class: "form-control" } %>
+      </div>
+
+      <%= f.submit '更新', class: 'btn btn-upload' %>
+      <% end %>
+    </div>
+
+  <% elsif juniors? %>
+    <p id="edit-name-button"><input type="button" value="編集" onclick="edit_name()"></p>
+    <p id="close-name-button"><input type="button" value="閉じる" onclick="close_name()"></p>
+
+    <div id="edit-name-form">
+      <%= form_for(user) do |f| %>
+      <%= render("layouts/error_messages", model: f.object) %>
+
+      <div class="form-group">
+        <%= f.label :grade, "学年" %>
+        <%= f.select :grade, [["高校1年", "高校1年"],["高校2年", "高校2年"],["高校3年", "高校3年"],["浪人生", "浪人生"]], {}, { class: "form-control" }  %>
+      </div>
+
+      <%= f.submit '更新', class: 'btn btn-upload' %>
+      <% end %>
+    </div>
+
+  <% end %>
+<% end %>
+
+<div id="user-school-id">
+  <div class="user-school-1">
+    <h3><%= @user.school %> <%= @user.department %></h3>
+  </div>
+
+  <div class="user-school-2">
+    <h3><%= @user.subject %> <%= @user.grade %></h3>
+  </div>
+</div>
+

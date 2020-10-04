@@ -1,23 +1,37 @@
-<div class="review-index">
+<h3>
+  高校生からのレビュー
   <% unless @reviews.empty? %>
-    <% @reviews.each do |review| %>
-      <% junior = User.find_by(id: review.junior_id) %>
+    （<%= @reviews.count %>件）
+  <% end %>
+</h3>
+<% unless @reviews.empty? %>
+  <% @reviews.each do |review| %>
+    <% junior = User.find_by(id: review.junior_id) %>
 
-      <%= image_tag junior.image.url, class: "review-icon", alt: "ユーザーアイコン" %>
+    <div clas="user-review">
+      <div class="user-review-star">
+        <%= image_tag junior.image.url, class: "review-icon", alt: "ユーザーアイコン" %>
 
-      <% review.star.times do %>
+        <% review.star.times do %>
         <i class="fas fa-star"></i>
-      <% end %>
+        <% end %>
+      </div>
 
-      <p><%= safe_join(review.content.split("\n"),tag(:br)) %></p>
+      <div class="review-content">
+        <h4><%= safe_join(review.content.split("\n"),tag(:br)) %></h4>
+      </div>
+
+      <div class="review-time">
+        <p><%= review.created_at.strftime("%Y年%m月%d日") %></p>
+      </div>
 
       <% if current_user.id == junior.id %>
         <%= render("users/review_edit_button", user: @user, reviwe: review) %>
       <% end %>
+    </div>
 
-    <% end %>
-    <%= paginate @reviews %>
-  <% else %>
-    <p>まだレビューはありません。</p>
   <% end %>
-</div>
+  <%= paginate @reviews %>
+<% else %>
+  <p class="non-review">まだレビューはありません</p>
+<% end %>

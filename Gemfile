@@ -76,11 +76,6 @@ gem 'omniauth-google-oauth2'
 gem 'carrierwave'
 
 
-#エラーを見やすくできるやつ
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-end
 
 #画像の大きさをいろいろ指定
 gem "mini_magick"
