@@ -27,6 +27,25 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  #チャットルームが開設されていない限り、レビューはできない(uid用)
+  def review_user_uid
+    @user = User.find_by(uid: params[:id])
+    @link = Link.find_by(senior_id: @user.id, chat: "approve", junior_id: current_user.id)
+    if @link.blank?
+      flash[:notice] = "権限がありません"
+      redirect_to("/")
+    end
+  end
+
+  #チャットルームが開設されていない限り、レビューはできない(reviewのid用)
+  def review_user_id
+    @review = Review.find_by(id: params[:id], junior_id: current_user.id)
+    if @review.blank?
+      flash[:notice] = "権限がありません"
+      redirect_to("/")
+    end
+  end
+
   #ログインしているかつstatus未登録ユーザーを、/statusに飛ばす
   def status_regist
     if logged_in?

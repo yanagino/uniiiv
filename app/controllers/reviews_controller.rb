@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+before_action :require_user_logged_in, :status_juniors
+before_action :review_user_uid, only: [:new, :edit]
+before_action :review_user_id, only: [:update, :destroy]
+
   def new
     @senior = User.find_by(uid: params[:id])
     @review = @senior.reviews.build
@@ -8,13 +12,19 @@ class ReviewsController < ApplicationController
     @review = current_user.reviewings.build(review_params)
     @senior = User.find_by(id: params[:review][:senior_id])
     @review.senior_id = @senior.id
+    @link = Link.find_by(senior_id: @senior.id, chat: "approve", junior_id: current_user.id)
 
-    if @review.save
-      flash[:success] = "レビューを投稿しました"
-      redirect_to("/seniors/#{@senior.uid}")
+    if @link.blank?
+      flash[:notice] = "権限がありません"
+      redirect_to("/")
     else
-      flash.now[:danger] = "レビューの投稿に失敗しました"
-      render("reviews/new")
+      if @review.save
+        flash[:success] = "レビューを投稿しました"
+        redirect_to("/seniors/#{@senior.uid}")
+      else
+        flash.now[:danger] = "レビューの投稿に失敗しました"
+        render("reviews/new")
+      end
     end
     
   end

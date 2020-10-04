@@ -2,18 +2,14 @@
 
   <%= render("layouts/error_messages", model: f.object) %>
 
-  <div>
-    レビュー（1-5点評価）
-  </div>
+  <h3>レビュー：１〜５点</h3>
   <%= f.radio_button :star, 1 %>1
   <%= f.radio_button :star, 2 %>2
   <%= f.radio_button :star, 3 %>3
   <%= f.radio_button :star, 4 %>4
   <%= f.radio_button :star, 5 %>5
 
-  <div>
-    コメント
-  </div>
+  <h3>コメント</h3>
   <%= f.text_area :content %>
   <%= f.hidden_field :senior_id, value: @senior.id %>
 

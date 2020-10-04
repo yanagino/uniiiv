@@ -8,9 +8,8 @@
 }
 
 .review-index h3 {
-  display: inline-block;
   margin: 0 0 20px 0;
-  background-color: rgb(245, 129, 173);
+  background-color: rgb(238, 98, 122);
   color: white;
   padding: 10px 20px;
   border-radius: 3px;
@@ -25,6 +24,7 @@
   width: 15%;
   vertical-align: middle;
   margin-right: 10px;
+  -webkit-user-drag: none;
 }
 
 .fa-star {

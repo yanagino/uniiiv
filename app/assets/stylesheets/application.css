@@ -91,6 +91,7 @@ a, a:hover, a:visited {
 .icon {
   border-radius: 100px;
   background-color: white;
+  -webkit-user-drag: none;
 }
 
 ul {
@@ -116,7 +117,7 @@ ul {
   border-radius: 100px;
   margin: 10px auto;
   font-size: 20px;
-  padding: 10px 100px;
+  padding: 10px 0;
   text-decoration: none;
 }
 
@@ -170,6 +171,10 @@ ul {
   font-size: 20px;
   padding: 5px 100px;
   margin-top: 10px;
+}
+
+.btn-disable {
+  cursor: default;
 }
 
 .btn-review-edit {
