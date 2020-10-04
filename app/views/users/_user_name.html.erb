@@ -37,8 +37,9 @@
     </div>
 
   <% elsif juniors? %>
-    <p id="edit-name-button"><input type="button" value="編集" onclick="edit_name()"></p>
-    <p id="close-name-button"><input type="button" value="閉じる" onclick="close_name()"></p>
+    <p id="edit-name-button"><input type="button" value="編集"  class="edit-btn edit-name-button" onclick="edit_name()"></p>
+    <p id="close-name-button"><input type="button" value="閉じる"  class="edit-btn close-name-button" onclick="close_name()"></p>
+    <div class="clear-right"></div>
 
     <div id="edit-name-form">
       <%= form_for(user) do |f| %>

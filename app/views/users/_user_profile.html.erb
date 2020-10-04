@@ -5,7 +5,6 @@
       <p id="edit-profile-button"><input type="button" value="編集"  class="edit-btn edit-profile-button" onclick="edit_profile()"></p>
       <p id="close-profile-button"><input type="button" value="閉じる"  class="edit-btn close-profile-button" onclick="close_profile()"></p>
       <div class="clear-right"></div>
-
   
       <div id="edit-profile-form">
         <%= form_for(user) do |f| %>
@@ -57,20 +56,11 @@
     </div>
 
   <% elsif user.status == "juniors" %>
-    <div id="user-profile">
-      <h3>志望校</h3>
-      <%=safe_join(user.content1.split("\n"),tag(:br))%>
-      <h3>大学で学びたいこと</h3>
-      <%=safe_join(user.content2.split("\n"),tag(:br))%>
-      <h3>悩んでいること</h3>
-      <%=safe_join(user.content3.split("\n"),tag(:br))%>
-      <h3>大学生に聞いてみたいこと</h3>
-      <%=safe_join(user.content4.split("\n"),tag(:br))%>
-    </div>
 
     <% if current_user == user %>
-      <p id="edit-profile-button"><input type="button" value="編集" onclick="edit_profile()"></p>
-      <p id="close-profile-button"><input type="button" value="閉じる" onclick="close_profile()"></p>
+      <p id="edit-profile-button"><input type="button" value="編集"  class="edit-btn edit-profile-button" onclick="edit_profile()"></p>
+      <p id="close-profile-button"><input type="button" value="閉じる"  class="edit-btn close-profile-button" onclick="close_profile()"></p>
+      <div class="clear-right"></div>
 
       <div id="edit-profile-form">
         <%= form_for(user) do |f| %>
@@ -78,29 +68,49 @@
 
         <div class="form-grpup">
           <%= f.label :content1, "志望校" %>
-          <%= f.text_area :content1 %>
+          <%= f.text_area :content1, class: "form-control" %>
         </div>
 
         <div class="form-grpup">
           <%= f.label :content2, "大学で学びたいこと" %>
-          <%= f.text_area :content2 %>
+          <%= f.text_area :content2, class: "form-control" %>
         </div>
 
         <div class="form-grpup">
           <%= f.label :content3, "悩んでいること" %>
-          <%= f.text_area :content3 %>
+          <%= f.text_area :content3, class: "form-control" %>
         </div>
 
         <div class="form-grpup">
           <%= f.label :content4, "大学生に聞いてみたいこと" %>
-          <%= f.text_area :content4 %>
+          <%= f.text_area :content4, class: "form-control" %>
         </div>
 
         <%= f.submit "更新", class: "btn btn-profile" %>
 
         <% end %>
       </div>
-
     <% end %>
+
+    <div id="user-profile">
+      <table class="table">
+        <thead><tr><td>志望校</td></tr></thead>
+        <tbody><tr><td><%=safe_join(user.content1.split("\n"),tag(:br))%></td></tr></tbody>
+      </table>
+      <table class="table">
+        <thead><tr><td>大学で学びたいこと</td></tr></thead>
+        <tbody><tr><td><%=safe_join(user.content2.split("\n"),tag(:br))%></td></tr></tbody>
+      </table>
+      <table class="table">
+        <thead><tr><td>悩んでいること</td></tr></thead>
+        <tbody><tr><td><%=safe_join(user.content3.split("\n"),tag(:br))%></td></tr></tbody>
+      </table>
+      <table class="table">
+        <thead><tr><td>大学生に聞いてみたいこと</td></tr></thead>
+        <tbody><tr><td><%=safe_join(user.content4.split("\n"),tag(:br))%></td></tr></tbody>
+      </table>
+    </div>
+
   <% end %>
+
 <% end %>
