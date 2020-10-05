@@ -8,9 +8,13 @@ before_action :status_seniors, only: [:approve, :deny]
     #大学生に何らかの通知を送りたい
     @senior = User.where(status: "seniors").find_by(id: params[:senior_id])
     if @senior
-      current_user.request(@senior)
-      flash[:success] = "申請が完了しました"
-      redirect_back(fallback_location: "/")
+      if current_user.request(@senior)
+        flash[:success] = "申請が完了しました"
+        redirect_back(fallback_location: "/")
+      else
+        flash[:danger] = "申請できませんでした"
+        redirect_to("/") 
+      end
     else
       flash[:danger] = "申請できませんでした"
       redirect_to("/")

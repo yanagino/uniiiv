@@ -26,7 +26,6 @@ class User < ApplicationRecord
     end
   end
 
-
   def deny(junior)
     if self.status == "seniors" && junior.status == "juniors"
       link = self.links_ju.find_by(junior_id: junior.id)

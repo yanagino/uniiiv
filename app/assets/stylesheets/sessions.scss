@@ -20,8 +20,10 @@
 
 // status登録ページ---------------------------------------
 .regist h3 {
-  font-size: 19px;
+  font-size: 22px;
   margin-bottom: 25px;
+  font-weight: bold;
+  color: rgb(250, 97, 9);
 }
 
 #junior-regist-button {
@@ -77,8 +79,12 @@
   height: 100px;
 }
 
-.status-image {
+.statu-image {
+  margin: 0;
+}
+
+.status-image input {
   width: 60%;
+  margin: 40px auto;
   display: inline-block;
-  margin: 0 auto;
 }

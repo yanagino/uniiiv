@@ -95,12 +95,6 @@ h2 {
   font-weight: bold;
 }
 
-.icon {
-  border-radius: 100px;
-  background-color: white;
-  -webkit-user-drag: none;
-}
-
 ul {
   list-style: none;
 }
@@ -162,12 +156,12 @@ ul {
 }
 
 .btn-approve {
-  background-color: rgb(202, 4, 96);
+  background-color: rgb(202, 4, 54);
 }
 
 .btn-deny {
   color: white;
-  background-color: rgb(141, 190, 247);
+  background-color: rgb(71, 148, 236);
 }
 
 .btn-upload {

@@ -12,25 +12,7 @@
 </div>
 
 <% unless @users.empty? %>
-  <div class="user-flex">
-    <% @users.each do |user| %>
-      <div class="user-index">
-        <%= link_to("/seniors/#{user.uid}") do %>
-          <%= image_tag user.image.url, class: "icon", alt: "ユーザーアイコン" %>
-          <div class="user-school">
-            <%= user.school %>
-          </div>
-          <div class="user-department">
-            <%= user.department %>
-          </div>
-          <div class="user-name">
-            <%= user.name %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-  <%= paginate @users %>
+  <%= render("users/user_index", users: @users) %>
 <% else %>
   <p class="no-hit">ヒットしませんでした</p>
 <% end %>

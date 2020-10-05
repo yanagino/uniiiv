@@ -9,18 +9,49 @@
 }
 
 .user-index {
-  padding: 30px 0;
-  margin: 1.5%;
-  background-color: rgb(252, 252, 252);
   width: 30%;
-  font-size: 20px;
+  margin: 1.5%;
+  background: #f8f0de;
+  border-left: 5px dotted #6e3d15b6;
+  box-shadow: 0 0 0 5 #f8f0d7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+}
+
+.user-index p {
+  color: rgba(236, 8, 57, 0.952);
   font-weight: bold;
-  box-shadow: 0 3px 3px 0 rgb(133, 133, 133);
+  margin: 0 0 15px 0;
+  font-size: 17px;
+}
+
+.user-index .stay {
+  color: #118b01;
+}
+
+.user-index .deny {
+  color: #022bb1;
 }
 
 .user-index a {
+  padding: 30px 0;
   display: block;
-  color: rgba(6, 103, 214, 0.877);
+  color: #152e6e;
+}
+
+.icon {
+  border-radius: 100px;
+  background-color: white;
+  -webkit-user-drag: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5%;
+}
+
+.user-info {
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .user-school {

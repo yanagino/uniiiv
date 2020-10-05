@@ -5,5 +5,5 @@ class Link < ApplicationRecord
 
   validates :junior, presence: true
   validates :senior, presence: true
-  validates :uuid, uniqueness: true
+  validates :uuid, uniqueness: true, allow_nil: true
 end

@@ -60,7 +60,7 @@
   <%= form_for(@user) do |f| %>
   <%= render("layouts/error_messages", model: f.object) %>
 
-  <div class="form-group">
+  <div class="status-image">
     <%= f.label :image, "プロフィール画像" %>
     <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/gif,image/png' %>
   </div>
