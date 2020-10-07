@@ -1,3 +1,64 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ユーザーメッセージ一覧画面-------------------------------
+.user-index-msg {
+  display: block;
+  position: relative;
+  margin: 10px auto;
+  background-color: rgb(253, 253, 253);
+  width: 51%;
+  border: 1px solid rgb(197, 197, 197);
+  text-align: left;
+}
+
+.user-index-msg:hover {
+  background-color: rgba(182, 182, 182, 0.322);
+}
+
+.user-index-msg a {
+  display: block;
+  padding: 20px 30px;
+}
+
+.icon-msg {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100px;
+  -webkit-user-drag: none;
+  width: 12%;
+  margin-right: 5%;
+}
+
+.user-info-msg {
+  display: inline-block;
+  width: 80%;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.user-name-msg {
+  color: orangered;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 5px;
+}
+
+.user-last-msg {
+  color: rgba(82, 81, 81, 0.856);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 5px;
+}
+
+.user-last-msg-date {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  margin: 0;
+  color: gray;
+}

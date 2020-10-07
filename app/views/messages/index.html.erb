@@ -1,29 +1,73 @@
-<h2>チャットルーム</h2>
+<h2>メッセージ一覧</h2>
 
 <% if seniors? %>
   <% unless @junior_links.empty? %>
-    <% @junior_links.each do |link| %>
-      <% @id = link.junior_id %>
-      <% @junior = User.find_by(id: @id)%>
-      <div>
-        <%= link_to(@junior.name, "/messages/#{link.uuid}") %>
-      </div>
-    <% end %>
+    <div class="user-flex">
+      <% @junior_links.each do |link| %>
+        <% @id = link.junior_id %>
+        <% @junior = User.find_by(id: @id)%>
+        <div class="user-index-msg">
+          <%= link_to("/messages/#{link.uuid}") do %>
+            <%= image_tag @junior.image.url, class: "icon-msg", alt: "ユーザーアイコン" %>
+            <% unless link.messages.last.blank? %>
+              <div class="user-last-msg-date">
+                <%= link.messages.last.created_at.strftime("%Y年%m月%d日") %>
+              </div>
+            <% end %>
+            <div class="user-info-msg">
+              <div class="user-name-msg">
+                <%= @junior.name %>
+              </div>
+              <div class="user-last-msg">
+                <% unless link.messages.last.blank? %>
+                  <%= link.messages.last.message %>
+                <% else %>
+                  <p>まだメッセージがありません</p>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
     <%= paginate @junior_links %>
   <% else %>
     <p>現在チャットはご利用できません。</p>
+    <p>高校生からの申請を承認後にご利用できるようになります。</p>
   <% end %>
 <% elsif juniors? %>
   <% unless @senior_links.empty? %>
-    <% @senior_links.each do |link| %>
-      <% @id = link.senior_id %>
-      <% @senior = User.find_by(id: @id)%>
-      <div>
-        <%= link_to(@senior.name, "/messages/#{link.uuid}") %>
-      </div>
-    <% end %>
+    <div class="user-flex">
+      <% @senior_links.each do |link| %>
+        <% @id = link.senior_id %>
+        <% @senior = User.find_by(id: @id)%>
+        <div class="user-index-msg">
+          <%= link_to("/messages/#{link.uuid}") do %>
+            <%= image_tag @senior.image.url, class: "icon-msg", alt: "ユーザーアイコン" %>
+            <% unless link.messages.last.blank? %>
+              <div class="user-last-msg-date">
+                <%= link.messages.last.created_at.strftime("%Y年%m月%d日") %>
+              </div>
+            <% end %>
+            <div class="user-info-msg">
+              <div class="user-name-msg">
+                <%= @senior.name %>
+              </div>
+              <div class="user-last-msg">
+                <% unless link.messages.last.blank? %>
+                  <%= link.messages.last.message %>
+                <% else %>
+                  <p>まだメッセージがありません</p>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
     <%= paginate @senior_links %>
   <% else %>
     <p>現在チャットはご利用できません。</p>
+    <p>高校生からの申請を承認後にご利用できるようになります。</p>
   <% end %>
 <% end %>
