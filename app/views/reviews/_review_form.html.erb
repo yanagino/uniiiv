@@ -18,9 +18,9 @@
     <label for="review_star_1"><i class="fas fa-star"></i></label>
   </div>
 
-  <h3>【レビュー（500文字以内）】</h3>
+  <h3>【レビュー】</h3>
   <div class="form-group">
-    <%= f.text_area :content, class: "form-control" %>
+    <%= f.text_area :content, class: "form-control", placeholder: "500文字以内で入力してください" %>
     <%= f.hidden_field :senior_id, value: @senior.id %>
   </div>
 

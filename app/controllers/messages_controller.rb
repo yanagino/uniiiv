@@ -14,11 +14,17 @@ before_action :correct_user, only: [:show, :create]
   def show
     @link = Link.find_by(uuid: params[:id])
 
-    @junior_name = @link.junior.name
-    @senior_name = @link.senior.name
-
-    @messages = @link.messages
     @message = @link.messages.build
+    @messages = @link.messages
+
+    if current_user.status == "juniors"
+      @status = "seniors"
+      @user = @link.senior
+    elsif current_user.status == "seniors"
+      @status = "juniors"
+      @user = @link.junior
+    end
+
   end
 
   def create
@@ -31,11 +37,16 @@ before_action :correct_user, only: [:show, :create]
       flash[:success] = "メッセージを送信しました"
       redirect_to("/messages/#{@link.uuid}")
     else
+      if current_user.status == "juniors"
+        @status = "seniors"
+        @user = @link.senior
+      elsif current_user.status == "seniors"
+        @status = "juniors"
+        @user = @link.junior
+      end
       flash.now[:danger] = "メッセージの送信に失敗しました"
-      @message.source = nil
-      @messages = @link.messages
-      @junior_name = @link.junior.name
-      @senior_name = @link.senior.name
+      @messages = @link.messages.where.not(message: "")
+      @message = @link.messages.build
       render("messages/show")
     end
   end

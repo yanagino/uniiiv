@@ -1,20 +1,43 @@
 <h2>メッセージ</h2>
 
-<% @messages.each do |message| %>
-  <% if message.source == "juniors" %>
-  <div>
-    <%= @junior_name %>：<%= safe_join(message.message.split("\n"),tag(:br)) %>
-  </div>
-  <% elsif message.source == "seniors" %>
-  <div>
-    <%= @senior_name %>：<%= safe_join(message.message.split("\n"),tag(:br)) %>
-  </div>
-  <% end %>
-<% end %>
-
-<%= form_for @message, url: {action: "create", params: {id: @link.uuid}} do |f| %>
+  <%= form_for @message, url: {action: "create", params: {id: @link.uuid}} do |f| %>
   <%= render("layouts/error_messages", model: f.object) %>
 
-  <%= f.text_area :message %>
-  <%= f.submit "送信" %>
-<% end %>
+<div class="other-user">
+  <%= link_to("/#{@status}/#{@user.uid}") do %>
+    <%= image_tag @user.image.url, class: "icon-msg-show", alt: "ユーザーアイコン" %>
+    <div class="msg-name">
+      <%= @user.name %>
+    </div>
+  <% end %>
+</div>
+
+<div class="all-messages">
+  <% @messages.each do |me| %>
+    <% unless me.message.nil? %>
+      <% if me.source == current_user.status %>
+        <div class="mes self-message">
+          <p><%= safe_join(me.message.split("\n"),tag(:br)) %></p>
+        </div>
+          <p class="self-time"><%= me.created_at.strftime("%Y/%m/%d %-H:%-M") %></p>
+      <% else %>
+        <div class="chatting">
+          <div class="mes other-message">
+            <p><%= safe_join(me.message.split("\n"),tag(:br)) %></p>
+          </div>
+          <p class="other-time"><%= me.created_at.strftime("%Y/%m/%d %-H:%-M") %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="message-forms">
+
+    <div class="form-group">
+      <%= f.text_area :message, class: "form-control message-form", placeholder: "1000文字以内で入力してください。" %>
+      <%= f.submit "送信", class: "btn-upload" %>
+    </div>
+
+  <% end %>
+</div>

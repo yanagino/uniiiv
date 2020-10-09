@@ -31,6 +31,7 @@ before_action :status_seniors, only: [:approve, :deny]
         @link.chat = "approve"
         @link.uuid = SecureRandom.uuid
         @link.save
+        @link.messages.create(source: current_user.status, message: "申請を承認しました")
         flash[:success] = "申請を承認しました"
         redirect_to("/messages/#{@link.uuid}")  
       else

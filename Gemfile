@@ -75,6 +75,10 @@ gem 'omniauth-google-oauth2'
 #画像アップロード用
 gem 'carrierwave'
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 
 #画像の大きさをいろいろ指定
