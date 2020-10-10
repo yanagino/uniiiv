@@ -57,6 +57,7 @@ a, a:hover, a:visited {
 .logo {
   float: left;
   letter-spacing: 2px;
+  margin: 15px 0;
 }
 
 .fa-graduation-cap {
@@ -149,7 +150,7 @@ h2 {
 .btn, .btn:hover, .bth:visited, .btn:focus {
   text-decoration: none;
   color: white;
-  outline: 0;
+  outline: none;
 }
 
 .edit-btn {
@@ -168,7 +169,7 @@ h2 {
 .edit-btn a, .edit-btn a:hover, .edit-bth a:visited, .edit-btn a:focus {
   text-decoration: none;
   color: white;
-  outline: 0;
+  outline: none;
 }
 
 .btn-applicate:hover {

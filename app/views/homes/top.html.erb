@@ -1,4 +1,44 @@
-<img src="/images/eye-catch.jpg" alt="図書館" class="eye-catch">
+<% unless logged_in? %>
+  <div class="eye-catch">
+    <img src="/images/eye1.jpg" alt="図書館" class="eye">
+      <h1 class="catch">自分で決める、大学進学</h1>
+      <button type="button" class="login-btn" data-toggle="modal" data-target="#Modal">
+        ログインしてUniiiv&に参加
+      </button>
+  </div>
+<% end %>
+
+  <!-- モーダル・ダイアログ -->
+  <div class="modal fade" id="Modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>【サービスの利用にはログインが必要です】</h3>
+        </div>
+        <div class="modal-body">
+          <div class="l-btn line">
+            <%= link_to("/auth/line") do %>
+              <i class="fab fa-line"></i> LINEログイン
+            <% end %>
+          </div>
+          <div class="l-btn goog">
+            <%= link_to("/auth/google_oauth2") do %>
+              <i class="fab fa-google"></i> Googleログイン
+            <% end %>
+          </div>
+          <div class="l-btn face">
+            <%= link_to("/auth/facebook") do %>
+              <i class="fab fa-facebook"></i> Facebookログイン
+            <% end %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-close" data-dismiss="modal">閉じる</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 <h2>申請可能な大学生一覧</h2>
 

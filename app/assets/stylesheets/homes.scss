@@ -3,8 +3,89 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .eye-catch {
-  width: 100%;
+  position: relative;
 }
+
+.eye {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  margin-bottom: 50px;
+}
+
+.catch {
+  letter-spacing: 0.05em;
+  color: rgb(35, 64, 114);
+  position: absolute;
+  display: inline-block;
+  padding: 40px;
+  padding-bottom: 110px;
+  border-radius: 5px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  font-weight: bold;
+  font-size: 40px;
+  background-color: rgba(247, 247, 247, 0.884);
+}
+
+.login-btn {
+  font-size: 22px;
+  display: inline-block;
+  position: absolute;
+  border-radius: 100px;
+  background-color: rgb(23, 158, 221);
+  color: white;
+  padding: 12px 50px;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.973);
+}
+
+.modal-header h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.l-btn {
+  width: 70%;
+  display: inline-block;
+  background-color: rgba(9, 182, 9, 0.877);
+  color: white;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.l-btn a {
+  color: white;
+  display: block;
+  padding: 15px 30px;
+}
+
+.goog {
+  background-color: rgba(219, 5, 16, 0.87);
+}
+
+.face {
+  background-color: rgba(28, 53, 121, 0.89);
+}
+
+.btn-close {
+  background-color: rgb(77, 77, 77);
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+}
+
 
 // トップページのユーザーサムネイル
 .user-flex {
