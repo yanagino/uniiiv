@@ -64,6 +64,18 @@
 }
 
 // ユーザーメッセージ詳細画面-------------------------------
+.forbid h3 {
+  color: rgb(255, 60, 0);
+  font-size: 18px;
+  margin: 0;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.forbid h3:first-child {
+  margin-bottom: 5px;
+}
+
 .other-user {
   background-color: rgb(201, 201, 201);
   max-width: 650px;

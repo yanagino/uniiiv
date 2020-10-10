@@ -44,10 +44,9 @@ before_action :correct_user, only: [:show, :create]
         @status = "juniors"
         @user = @link.junior
       end
-      flash.now[:danger] = "メッセージの送信に失敗しました"
-      @messages = @link.messages.where.not(message: "")
-      @message = @link.messages.build
-      render("messages/show")
+        flash.now[:danger] = "メッセージの送信に失敗しました"
+        @messages = @link.messages.where.not(message: "")
+        render("messages/show")
     end
   end
 

@@ -13,7 +13,13 @@ class HomesController < ApplicationController
       flash[:notice] = "キーワードが入力されていません"
       redirect_to("/")
     end
+  end
 
+  def privacy
+
+  end
+
+  def terms
     
   end
 

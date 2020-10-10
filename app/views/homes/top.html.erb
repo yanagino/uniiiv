@@ -1,10 +1,12 @@
 <% unless logged_in? %>
   <div class="eye-catch">
     <img src="/images/eye1.jpg" alt="図書館" class="eye">
-      <h1 class="catch">自分で決める、大学進学</h1>
-      <button type="button" class="login-btn" data-toggle="modal" data-target="#Modal">
-        ログインしてUniiiv&に参加
-      </button>
+    <h1 class="catch">自分で決める、大学進学</h1>
+    <button type="button" class="login-btn" data-toggle="modal" data-target="#Modal">
+      Uniiiv&(ユニーブ)に参加
+    </button>
+    <p class="first-check"><i class="fas fa-check"></i> 高校生は大学生に受験や大学生活の相談ができます</p>
+    <p class="second-check"><i class="fas fa-check"></i> 大学生はアドバイザーとして参加できます</p>
   </div>
 <% end %>
 
@@ -32,7 +34,11 @@
             <% end %>
           </div>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer modal-footer-1">
+          <p><%= link_to("利用規約を確認する","/terms") %></p>
+          <p><%= link_to("プライバシーポリシーを確認する","/privacy") %></p>
+        </div>
+        <div class="modal-footer modal-footer-2">
           <button type="button" class="btn-close" data-dismiss="modal">閉じる</button>
         </div>
       </div>
@@ -40,7 +46,7 @@
   </div>
 
 
-<h2>申請可能な大学生一覧</h2>
+<h2 class="home">話を聞きたい大学生を探す</h2>
 
 <div class="row">
   <%= form_tag("/search", method: "GET") do %>
