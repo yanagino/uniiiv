@@ -12,13 +12,13 @@ class User < ApplicationRecord
   validates :content4, length: { maximum: 1000 }
 
   #モデルの関連付け
-  has_many :links_se, class_name: "Link", foreign_key: "junior_id"
-  has_many :links_ju, class_name: "Link", foreign_key: "senior_id"
-  has_many :seniors, through: :links_se, source: :senior
-  has_many :juniors, through: :links_ju, source: :junior
-  has_many :reviews, class_name: "Review", foreign_key: "senior_id"
-  has_many :reviewings, class_name: "Review", foreign_key: "junior_id"
-  has_many :reviewing_seniors, through: :reviewings, source: :senior 
+  has_many :links_se, class_name: "Link", foreign_key: "junior_id", dependent: :destroy
+  has_many :links_ju, class_name: "Link", foreign_key: "senior_id", dependent: :destroy
+  has_many :seniors, through: :links_se, source: :senior, dependent: :destroy
+  has_many :juniors, through: :links_ju, source: :junior, dependent: :destroy
+  has_many :reviews, class_name: "Review", foreign_key: "senior_id", dependent: :destroy
+  has_many :reviewings, class_name: "Review", foreign_key: "junior_id", dependent: :destroy
+  has_many :reviewing_seniors, through: :reviewings, source: :senior , dependent: :destroy
 
   def request(senior)
     if self.status == "juniors" && senior.status == "seniors"

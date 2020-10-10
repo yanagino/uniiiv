@@ -1,28 +1,48 @@
 <div class="header">
-  <h3 class="logo"><%= link_to("キャリステ","/") %></h3>
+  <h3 class="logo">
+    <%= link_to("/") do %>
+      <i class="fas fa-graduation-cap"></i>Uniiiv&
+    <% end %>
+  </h3>
     <% if current_user %>
       <div class="header-menu">
         <% if current_user.status %>
-          <%= link_to("マイページ", "/#{current_user.status}/#{current_user.uid}") %>
+          <%= link_to("/#{current_user.status}/#{current_user.uid}") do %>
+            <i class="fas fa-user"></i> マイページ
+          <% end %>
           <span class="header-bar">|</span>
-          <%= link_to("申請一覧", "/action") %>
+          <%= link_to("/action") do %>
+            <i class="fas fa-clipboard"></i> 申請一覧
+          <% end %>
           <span class="header-bar">|</span>
-          <%= link_to("メッセージ", "/messages") %>
+          <%= link_to("/messages") do %>
+            <i class="fas fa-comment"></i> メッセージ
+          <% end %>
           <span class="header-bar">|</span>
         <% else %>
-          <%= link_to("ステータス登録", "/status") %>
+          <%= link_to("/status") do %>
+            <i class="fas fa-clipboard"></i> ステータス登録
+          <% end %>
           <span class="header-bar">|</span>
         <% end %>
-          <%= link_to("ログアウト", "/logout", method: "POST", data: { confirm: "ログアウトしますか？" }) %>
+          <%= link_to("/logout", method: "POST", data: { confirm: "ログアウトしますか？" }) do %>
+            <i class="fas fa-sign-out-alt"></i> ログアウト
+          <% end %>
       </div>
       <div class="clear"></div>
     <% else %>
       <div class="header-menu">
-        <%= link_to("LINEログイン", "/auth/line") %>
+        <%= link_to("/auth/line") do %>
+          <i class="fab fa-line"></i> LINEログイン
+        <% end %>
         <span class="header-bar">|</span>
-        <%= link_to("Facebookログイン", "/auth/facebook") %>
+        <%= link_to("/auth/facebook") do %>
+          <i class="fab fa-facebook"></i> Facebookログイン
+        <% end %>
         <span class="header-bar">|</span>
-        <%= link_to("Googleログイン", "/auth/google_oauth2") %>
+        <%= link_to("/auth/google_oauth2") do %>
+          <i class="fab fa-google"></i> Googleログイン
+        <% end %>
       </div>
       <div class="clear"></div>
     <% end %>

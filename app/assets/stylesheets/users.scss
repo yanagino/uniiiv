@@ -27,6 +27,12 @@
   width: 60%;
   margin: 50px auto;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+  color: #421c06;
+}
+
+.user-show-top:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition-duration: 0.5s;
 }
 
 .user-name {
@@ -58,6 +64,10 @@
   margin-bottom: 5px;
 }
 
+.user-school-2 h3 {
+  margin-top: 10px;
+}
+
 .user-police {
   text-align: right;
   margin: 10px 10px 0 0;
@@ -82,6 +92,11 @@
 .table {
   margin-bottom: 45px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.table:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition-duration: 0.5s;
 }
 
 #user-profile thead {

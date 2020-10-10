@@ -37,13 +37,30 @@ a, a:hover, a:visited {
   text-decoration: none;
 }
 
+*:focus {
+  outline: none;
+}
+
 .header a {
-  color: orangered;
+  color: #ff4500;
   font-weight: bold;
+}
+
+.header :not(.logo) a:hover {
+  color: white;
+  background-color: rgb(228, 113, 72);
+  transition-duration: 0.3s;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 .logo {
   float: left;
+  letter-spacing: 2px;
+}
+
+.fa-graduation-cap {
+  margin-right: 3px;
 }
 
 .header-menu {
@@ -111,10 +128,10 @@ h2 {
 }
 
 .container {
-  padding: 110px 0 100px 0 ;
-  max-width: 1170px;
   margin: 0 auto;
   text-align: center;
+  padding: 110px 0 100px 0;
+  max-width: 1170px;
 }
 
 .btn {
@@ -208,8 +225,18 @@ h2 {
   color: white;
 }
 
+/*ページネーション自体のデザイン*/
+.pagination {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pagination .page {
+  margin: 0 2px;
+}
+
 footer {
-  background-color: rgb(247, 107, 26);
+  background-color: #f76b1a;
   height: 70px;
   text-align: center;
 }

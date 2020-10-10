@@ -2,4 +2,8 @@
   <div class="user-police">
     <%= link_to("通報する","https://docs.google.com/forms/d/e/1FAIpQLSepxXn34MKO-jfdM6Zg8iYmFZAqFDmcZLhehdqoN2RBp-bBaA/viewform?usp=pp_url&entry.374691647=#{user.uid}&entry.229197559=#{current_user.uid}") %>
   </div>
+<% else %>
+  <div class="user-police">
+    <%= link_to("退会する","/users/#{user.uid}", method: "DELETE", data: { confirm: "Uniiiv&での情報が全て消去されます。よろしいですか？"}) %>
+  </div>
 <% end %>

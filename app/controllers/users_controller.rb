@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-before_action :require_user_logged_in
-before_action :status_regist, only: [:index, :seniors, :juniors]
+before_action :require_user_logged_in 
+before_action :status_regist, only: [:index, :seniors, :juniors, :destroy]
   
   def index
     if juniors?
@@ -46,6 +46,18 @@ before_action :status_regist, only: [:index, :seniors, :juniors]
         @reviews = @user.reviews.order(created_at: "DESC").page(params[:page]).per(5)
         render("users/#{@user.status}")
       end
+    end
+  end
+
+  def destroy
+    @user = User.find_by(uid: params[:id])
+
+    if @user.destroy
+      flash[:success] = "退会が完了しました"
+      redirect_to("/")
+    else
+      flash[:danger] = "エラーが発生しました"
+      redirect_back(fallback_location: "/")
     end
   end
 
