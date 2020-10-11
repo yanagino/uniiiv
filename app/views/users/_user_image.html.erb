@@ -3,7 +3,6 @@
 <% if current_user == user %>
 <div id="edit-image-form">
   <%= form_for(user) do |f| %>
-  <%= render("layouts/error_messages", model: f.object) %>
 
   <div class="image-form">
     <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/gif,image/png' %>

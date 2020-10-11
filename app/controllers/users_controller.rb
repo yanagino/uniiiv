@@ -64,7 +64,7 @@ before_action :status_regist, only: [:index, :seniors, :juniors, :destroy]
   private
   def user_params
     unless params[:user].nil?
-      params.require(:user).permit(:name, :image, :school, :department, :subject, :grade, :content1, :content2, :content3, :content4)
+      params.require(:user).permit(:name, :image, :school, :department, :subject, :grade, :content1, :content2, :content3, :content4, :email, :notice)
     end
   end
 

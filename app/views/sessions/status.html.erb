@@ -8,7 +8,9 @@
 <p id="senior-regist-button"><input type="button" value="大学生" class="status-btn senior-regist-button" onclick="senior_regist()"></p>
 <p id="regist-close-button"><input type="button" value="選び直す" class="status-btn regist-close-button" onclick="regist_close()"></p>
 
-<h3 id="status-step2">STEP2:ユーザー情報を入力してください</h3>
+<h3 id="status-step2">STEP2:ユーザー情報を入力してください
+<p>※印は入力必須項目です</p>
+</h3>
 
 <%# 高校生用の登録フォーム----------------------------------------- %>
 <div id="junior-regist-form">
@@ -21,13 +23,18 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :name, "名前" %>
+    <%= f.label :name, "※名前" %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :grade, "学年" %>
+    <%= f.label :grade, "※学年" %>
     <%= f.select :grade, [["高校1年", "高校1年"],["高校2年", "高校2年"],["高校3年", "高校3年"],["浪人生", "浪人生"]], {}, { class: "form-control"} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, "※メールアドレス" %>
+    <%= f.email_field :email, class: "form-control" %>
   </div>
 
   <div class="form-grpup">
@@ -66,12 +73,12 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :name, "名前" %>
+    <%= f.label :name, "※名前" %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :school, "大学" %>
+    <%= f.label :school, "※大学" %>
     <%= f.text_field :school, class: "form-control" %>
   </div>
 
@@ -86,8 +93,13 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :grade, "学年" %>
+    <%= f.label :grade, "※学年" %>
     <%= f.select :grade, [["学部1年", "学部1年"],["学部2年", "学部2年"],["学部3年", "学部3年"],["学部4年", "学部4年"], ["その他", "その他"]], {}, { class: "form-control" } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, "※メールアドレス" %>
+    <%= f.email_field :email, class: "form-control" %>
   </div>
 
   <div class="form-grpup">

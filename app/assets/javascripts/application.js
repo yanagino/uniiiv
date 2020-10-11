@@ -80,3 +80,17 @@ function regist_close() {
   document.getElementById("status-step1").style.display = "block";
   document.getElementById("status-step2").style.display = "none";
 }
+
+function edit_email() {
+  document.getElementById("email-notice-form").style.display = "block";
+  document.getElementById("close-email-button").style.display = "block";
+  document.getElementById("edit-email-button").style.display = "none";
+  document.getElementById("email-notice").style.display = "none";
+}
+
+function close_email() {
+  document.getElementById("email-notice-form").style.display = "none";
+  document.getElementById("close-email-button").style.display = "none";
+  document.getElementById("edit-email-button").style.display = "block";
+  document.getElementById("email-notice").style.display = "block";
+}

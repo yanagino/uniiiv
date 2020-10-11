@@ -5,6 +5,9 @@ class User < ApplicationRecord
   #バリデーションは以下の通り
   validates :uid, presence: true, uniqueness: true
   validates :name, presence: true
+  validates :email, length: { maximum: 255 },
+  format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
+  uniqueness: { case_sensitive: false }, allow_nil: true
 
   validates :content1, length: { maximum: 1000 }
   validates :content2, length: { maximum: 1000 }

@@ -3,7 +3,11 @@ ja:
     attributes:
       user:
         name: 名前
+        school: 大学
+        department: 学部
+        subject: 学科
         grade: 学年
+        email: メールアドレス
         image: プロフィール画像
         content1: 1
         content2: 2

@@ -1,0 +1,29 @@
+<p id="edit-email-button"><input type="button" value="編集" class="edit-btn edit-email-button" onclick="edit_email()"></p>
+<p id="close-email-button"><input type="button" value="閉じる" class="edit-btn close-email-button" onclick="close_email()"></p>
+<div class="clear-right"></div>
+
+<h2>メールアドレス設定</h2>
+
+
+<div id="email-notice">
+  <h3>メールアドレス：<%= user.email %></h3>
+  <h3>通知設定：<%= user.notice %></h3>
+</div>
+
+<div id="email-notice-form">
+  <%= form_for(user) do |f| %>
+  <%= render("layouts/error_messages", model: f.object) %>
+
+  <div class="form-group">
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :notice, "通知設定" %>
+    <%= f.select :notice, [["受信する", "受信する"],["受信しない", "受信しない"]], {}, { class: "form-control" } %>
+  </div>
+
+  <%= f.submit '更新', class: 'btn btn-upload' %>
+  <% end %>
+</div>
