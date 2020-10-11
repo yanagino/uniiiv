@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+
+    .btn {
+      background-color: rgb(228, 113, 72);
+      display: inline-block;
+      margin: 0 auto;
+      border-radius: 3px;
+    }
+
+    .btn a {
+      padding: 10px 15px;
+      color: white;
+      display: block;
+      text-decoration: none;
+    }
+
+    .bottom {
+      margin-top: 0;
+    }
+
+    </style>
+
+  </head>
+  <body>
+    <p><%= @junior.name %>さん</p>
+
+    <br>
+
+    <p>Uniiiv&運営事務局です。</p>
+
+    <br>
+
+    <p><%= @senior.name %>さんへの申請が承認されました！</p>
+    <p>さっそくメッセージを送って相談しましょう！</p>
+
+    <br>
+
+    <div class="btn">
+      <%= link_to(">メッセージを確認", "http://localhost:3000/messages/#{@link.uuid}") %>
+    </div>
+
+    <br>
+    <br>
+
+    <p>--------------------------------------------</p>
+    <p>Uniiiv&(ユニーブ)</p>
+    <p class="bottom">http://localhost:3000/<p>
+
+  </body>
+</html>

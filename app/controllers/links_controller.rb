@@ -5,11 +5,12 @@ before_action :status_seniors, only: [:approve, :deny]
 
   def create
     #高校生が申請するメソッド
-    #大学生に何らかの通知を送りたい
+    #大学生に通知を送る
     @senior = User.where(status: "seniors").find_by(id: params[:senior_id])
     if @senior
       if current_user.request(@senior)
         flash[:success] = "申請が完了しました"
+        ContactMailer.send_email_application(current_user, @senior).deliver
         redirect_back(fallback_location: "/")
       else
         flash[:danger] = "申請できませんでした"
@@ -23,7 +24,6 @@ before_action :status_seniors, only: [:approve, :deny]
 
   def approve
     #申請を承認するメソッド
-    #高校生に何らかの通知を送りたい
     @junior = User.where(status: "juniors").find_by(uid: params[:id])
     if @junior
       if current_user.status == "seniors"
@@ -33,6 +33,7 @@ before_action :status_seniors, only: [:approve, :deny]
         @link.save
         @link.messages.create(source: current_user.status, message: "申請を承認しました")
         flash[:success] = "申請を承認しました"
+        ContactMailer.send_email_approve(@junior, current_user, @link).deliver
         redirect_to("/messages/#{@link.uuid}")  
       else
         flash[:danger] = "承認できませんでした"
@@ -46,7 +47,6 @@ before_action :status_seniors, only: [:approve, :deny]
 
   def deny
     #申請を否認するメソッド
-    #高校生に何らかの通知を送る？
     @junior = User.where(status: "juniors").find_by(uid: params[:id])
     if @junior
       current_user.deny(@junior)

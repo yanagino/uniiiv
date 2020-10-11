@@ -35,6 +35,12 @@ before_action :correct_user, only: [:show, :create]
 
     if @message.save 
       flash[:success] = "メッセージを送信しました"
+      if current_user.status == "juniors"
+        @to_user = @link.senior
+      elsif current_user.status == "seniors"
+        @to_user = @link.junior
+      end
+      ContactMailer.send_email_message(current_user, @to_user, @link).deliver
       redirect_to("/messages/#{@link.uuid}")
     else
       if current_user.status == "juniors"

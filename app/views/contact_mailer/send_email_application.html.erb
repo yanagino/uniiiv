@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+
+    .btn {
+      background-color: rgb(228, 113, 72);
+      display: inline-block;
+      margin: 0 auto;
+      border-radius: 3px;
+    }
+
+    .btn a {
+      padding: 10px 15px;
+      color: white;
+      display: block;
+      text-decoration: none;
+    }
+
+    .bottom {
+      margin-top: 0;
+    }
+
+    </style>
+
+  </head>
+  <body>
+    <p><%= @senior.name %>さん</p>
+
+    <br>
+
+    <p>Uniiiv&運営事務局です。</p>
+
+    <br>
+
+    <p><%= @junior.name %>さんから申請が届きました！</p>
+    <p>プロフィールを確認後、承認するかどうかご判断ください！</p>
+
+    <br>
+
+    <div class="btn">
+      <%= link_to(">プロフィールを確認する", "http://localhost:3000/juniors/#{@junior.uid}") %>
+    </div>
+
+    <br>
+    <br>
+
+    <p>--------------------------------------------</p>
+    <p>Uniiiv&(ユニーブ)</p>
+    <p class="bottom">http://localhost:3000/<p>
+
+  </body>
+</html>
