@@ -27,7 +27,7 @@
   background-color: #fff8f0c7;
   color: orangered;
   text-align: center;
-  padding: 0 100px;
+  padding: 0 70px;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -68,7 +68,9 @@ a, a:hover, a:visited {
   padding-top: 17px; 
   float: right;
   vertical-align: middle;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .header-bar {
@@ -237,7 +239,7 @@ h2 {
 }
 
 footer {
-  padding: 20px 150px;
+  padding: 20px 120px;
   background-color: #f76b1a;
   height: 170px;
   text-align: center;
@@ -268,14 +270,252 @@ footer p {
   margin-top: 10px;
 }
 
+
 /*タブレット向けデザイン--------------------------------------------*/
 /*タブレット向けデザイン--------------------------------------------*/
 /*タブレット向けデザイン--------------------------------------------*/
 @media all and (max-width: 850px) {
   .contain {
+    max-width: 700px;
      padding: 110px 30px 100px 30px;
   }
 
+  .header {
+    padding: 0 20px;
+    z-index: 999;
+  }
+
+  footer {
+    padding: 20px 20px;
+    text-align: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+
+/*モーダルフルバージョン--------------------------------------------*/
+  .fa-bars {
+    font-size: 25px;
+  }
 
 
+/*homes/top--------------------------------------------*/
+  .catch {
+    width: 100%;
+  }
+
+  .first-check {
+    width: 100%;
+  }
+
+  .second-check {
+    width: 100%;
+  }
+
+  .l-btn {
+    width: 80%;
+  }
+
+  .search-input {
+    width: 83%;
+  }
+
+  .search-submit {
+    width: 13%;
+  }
+
+  .none {
+    display: none;
+  }
+
+  .user-index {
+    width: 47%;
+    margin-bottom: 30px;
+  }
+
+/*senior--------------------------------------------*/
+  .user-image {
+    margin: 20px auto 0;
+  }
+
+  .user-show-top {
+    margin: 50px 0 70px;
+    width: 100%;
+  }
+
+  .user-profile {
+    float: none;
+    width: 100%;
+  }
+
+  .review-index {
+    float: none;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+/*senior--------------------------------------------*/
+  .user-profile-junior {
+    width: 100%;
+  }
+
+  .btn-upload {
+    padding: 7px 70px;
+  }
+
+  .edit-btn {
+    width: 20%;
+  }
+
+  .email-notice h2 {
+    margin-top: 15px;
+  }
+
+/*messages/index--------------------------------------------*/
+  .user-index-msg {
+    width: 100%;
+  }
+
+  .icon-msg {
+    width: 17%;
+  }
+
+  .user-info-msg {
+    width: 75%;
+  }
+
+/*messages/show--------------------------------------------*/
+  .forbid h3 {
+    font-size: 15px;
+  }
+
+/*review/form--------------------------------------------*/
+  .review-form .form-control {
+    width: 100%;
+  }
+}
+
+/*スマホ向けデザイン--------------------------------------------*/
+/*スマホ向けデザイン--------------------------------------------*/
+/*スマホ向けデザイン--------------------------------------------*/
+@media all and (max-width: 480px) {
+  .contain {
+    padding: 110px 15px 100px 15px;
+  }
+
+  .header {
+    padding: 0 20px;
+    z-index: 999;
+  }
+
+  footer {
+    padding: 20px 20px;
+    text-align: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+
+/*モーダルフルバージョン--------------------------------------------*/
+  .fa-bars {
+    font-size: 25px;
+  }
+
+
+/*homes/top--------------------------------------------*/
+  .catch {
+    width: 100%;
+  }
+
+  .first-check {
+    width: 100%;
+  }
+
+  .second-check {
+    width: 100%;
+  }
+
+  .l-btn {
+    width: 80%;
+  }
+
+  .search-input {
+    width: 83%;
+  }
+
+  .search-submit {
+    width: 13%;
+  }
+
+  .none {
+    display: none;
+  }
+
+  .user-index {
+    width: 47%;
+    margin-bottom: 30px;
+  }
+
+/*senior--------------------------------------------*/
+  .user-image {
+    margin: 20px auto 0;
+  }
+
+  .user-show-top {
+    margin: 50px 0 70px;
+    width: 100%;
+  }
+
+  .user-profile {
+    float: none;
+    width: 100%;
+  }
+
+  .review-index {
+    float: none;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+/*senior--------------------------------------------*/
+  .user-profile-junior {
+    width: 100%;
+  }
+
+  .btn-upload {
+    padding: 7px 70px;
+  }
+
+  .edit-btn {
+    width: 20%;
+  }
+
+  .email-notice h2 {
+    margin-top: 15px;
+  }
+
+/*messages/index--------------------------------------------*/
+  .user-index-msg {
+    width: 100%;
+  }
+
+  .icon-msg {
+    width: 17%;
+  }
+
+  .user-info-msg {
+    width: 75%;
+  }
+
+/*messages/show--------------------------------------------*/
+  .forbid h3 {
+    font-size: 15px;
+  }
+
+/*review/form--------------------------------------------*/
+  .review-form .form-control {
+    width: 100%;
+  }
 }

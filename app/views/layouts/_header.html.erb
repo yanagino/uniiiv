@@ -8,41 +8,33 @@
       <div class="header-menu">
         <% if current_user.status %>
           <%= link_to("/#{current_user.status}/#{current_user.uid}") do %>
-            <i class="fas fa-user"></i> マイページ
+            <i class="fas fa-user"></i> <span class="none">マイページ</span>
           <% end %>
           <span class="header-bar">|</span>
           <%= link_to("/action") do %>
-            <i class="fas fa-clipboard"></i> 申請一覧
+            <i class="fas fa-clipboard"></i> <span class="none">申請一覧</span>
           <% end %>
           <span class="header-bar">|</span>
           <%= link_to("/messages") do %>
-            <i class="fas fa-comment"></i> メッセージ
+            <i class="fas fa-comment"></i> <span class="none">メッセージ</span>
           <% end %>
           <span class="header-bar">|</span>
         <% else %>
           <%= link_to("/status") do %>
-            <i class="fas fa-clipboard"></i> ステータス登録
+            <i class="fas fa-clipboard"></i> <span class="none">ステータス登録</span>
           <% end %>
           <span class="header-bar">|</span>
         <% end %>
-          <%= link_to("/logout", method: "POST", data: { confirm: "ログアウトしますか？" }) do %>
-            <i class="fas fa-sign-out-alt"></i> ログアウト
-          <% end %>
+        <%= link_to("/logout", method: "POST", data: { confirm: "ログアウトしますか？" }) do %>
+          <i class="fas fa-sign-out-alt"></i> <span class="none">ログアウト</span>
+        <% end %>
       </div>
       <div class="clear"></div>
     <% else %>
       <div class="header-menu">
-        <%= link_to("/auth/line") do %>
-          <i class="fab fa-line"></i> LINEログイン
-        <% end %>
-        <span class="header-bar">|</span>
-        <%= link_to("/auth/google_oauth2") do %>
-          <i class="fab fa-google"></i> Googleログイン
-        <% end %>
-        <span class="header-bar">|</span>
-        <%= link_to("/auth/facebook") do %>
-          <i class="fab fa-facebook"></i> Facebookログイン
-        <% end %>
+        <p data-toggle="modal" data-target="#Modal">
+          ログイン/新規登録
+        </p>
       </div>
       <div class="clear"></div>
     <% end %>
