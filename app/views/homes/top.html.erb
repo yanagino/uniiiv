@@ -1,7 +1,7 @@
 <% unless logged_in? %>
   <div class="eye-catch">
     <img src="/images/eye1.jpg" alt="図書館" class="eye">
-    <h1 class="catch">自分で決める、大学進学</h1>
+    <h1 class="catch">自分で決める、<br>大学進学</h1>
     <button type="button" class="login-btn" data-toggle="modal" data-target="#Modal">
       Uniiiv&(ユニーブ)に参加
     </button>
@@ -48,16 +48,12 @@
 
 <h2 class="home">大学生を探して話を聞く</h2>
 
-<div class="row">
   <%= form_tag("/search", method: "GET") do %>
-    <div class="col-sx-10 col-sm-8 col-md-10 search-form">
       <input name="keyword" placeholder="例)京都大学, 経済学部, 数学 など" class="search-input">
       <%= button_tag type: "submit", class: "search-submit" do %>
         <span class="fa fa-search"></span> 検索
       <% end %>
-    </div>
   <% end %>
-</div>
 
 <% unless @users.empty? %>
   <%= render("users/user_index", users: @users) %>
