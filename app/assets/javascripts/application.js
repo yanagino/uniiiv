@@ -96,28 +96,30 @@ function close_email() {
 }
 
 function full_modal() {
+  document.getElementById("full-modal").animate({
+    opacity: [0, 1]
+  }, 300);
   document.getElementById("full-modal").style.display = "block";
   document.getElementById("full-modal").style.position = "fixed";
   document.getElementById("full-modal").style.width = "100%";
   document.getElementById("full-modal").style.height = "100%";
   document.getElementById("full-modal").style.zIndex = "800";
   document.getElementById("full-modal").style.backgroundColor = "white";
-  document.getElementById("full-modal").style.transitionDuration = "1s";
-  document.getElementById("full-modal").style.transitionDuration = "1s";
   document.getElementById("header").style.backgroundColor = "rgb(250, 250, 250)";
   document.getElementById("full-modal-button").style.display = "none";
   document.getElementById("close-modal-button").style.display = "block";
 }
 
 function status_modal() {
+  document.getElementById("status-modal").animate({
+    opacity: [0, 1]
+  }, 300);
   document.getElementById("status-modal").style.display = "block";
   document.getElementById("status-modal").style.position = "fixed";
   document.getElementById("status-modal").style.width = "100%";
   document.getElementById("status-modal").style.height = "100%";
   document.getElementById("status-modal").style.zIndex = "800";
   document.getElementById("status-modal").style.backgroundColor = "white";
-  document.getElementById("status-modal").style.transitionDuration = "1s";
-  document.getElementById("status-modal").style.transitionDuration = "1s";
   document.getElementById("header").style.backgroundColor = "rgb(250, 250, 250)";
   document.getElementById("status-modal-button").style.display = "none";
   document.getElementById("close-modal-button").style.display = "block";
