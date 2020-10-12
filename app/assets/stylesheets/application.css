@@ -73,6 +73,24 @@ a, a:hover, a:visited {
   cursor: pointer;
 }
 
+.header-login {
+  margin-top: 9px;
+  font-size: 18px;
+  border: 1.5px solid #f76b1a;
+  border-radius: 3px;
+  padding: 5px 14px;
+}
+
+.header-login:hover {
+  background-color: #f76b1a;
+  color: white;
+  transition-duration: 0.2s;
+}
+
+.header-login p {
+  margin: 0;
+}
+
 .header-bar {
   margin: 0 10px;
 }
@@ -255,6 +273,10 @@ footer a {
   color: white;
 }
 
+footer a:hover {
+  opacity: 0.85;
+}
+
 footer a:hover, footer a:visited {
   color: white;
 }
@@ -273,6 +295,20 @@ footer p {
 .br {
   display: none;
 }
+
+.block {
+  display: none;
+}
+
+/*フルモーダル用*/
+.full-modal {
+  display: none;
+}
+
+#close-modal-button {
+  display: none;
+}
+
 
 /*タブレット向けデザイン--------------------------------------------*/
 /*タブレット向けデザイン--------------------------------------------*/
@@ -297,7 +333,55 @@ footer p {
     text-align: center;
   }
 
+  .block {
+    display: block;
+  }
+
+  .responsive {
+    display: none;
+  }
+
 /*モーダルフルバージョン--------------------------------------------*/
+
+  .full-modal-content {
+    margin-top: 55px;
+    padding-top: 40px;
+    min-height: 100%;
+    background-color: rgb(250, 250, 250);
+    transition-duration: 1s;
+  }
+
+  ul {
+    list-style: none;
+    font-size: 18px;
+    padding-left: 30px;
+  }
+
+  ul a {
+    color: orangered;
+    font-weight: bold;
+  }
+
+  ul a:hover {
+    color: orangered;
+    opacity: 0.85;
+  }
+
+  ul li {
+    margin-bottom: 20px;
+  }
+
+  ul .fas {
+    margin-right: 30px;
+  }
+
+  .fa-bars {
+    font-size: 24px;
+  }
+
+  .fa-times {
+    font-size: 24px;
+  }
 
 /*homes/top--------------------------------------------*/
   .catch {
@@ -336,6 +420,14 @@ footer p {
   .user-index {
     width: 47%;
     margin-bottom: 30px;
+  }
+
+  .header-login {
+    margin-top: 12px;
+    font-size: 15px;
+    border: 1px solid #f76b1a;
+    border-radius: 3px;
+    padding: 5px 10px;
   }
 
 /*senior--------------------------------------------*/
@@ -391,6 +483,14 @@ footer p {
 
   .user-info-msg {
     width: 75%;
+  }
+
+  #edit-email-button .edit-email-button {
+    margin-top: 30px;
+  }
+
+  #close-email-button .close-email-button {
+    margin-top: 30px;
   }
 
 /*messages/show--------------------------------------------*/
@@ -471,15 +571,18 @@ footer p {
 
   .header {
     padding: 0 20px;
-    z-index: 999;
   }
 
   .logo {
     font-size: 23px;
   }
 
-  .header-menu {
-    font-size: 10px;
+  .header-login {
+    margin-top: 12px;
+    font-size: 15px;
+    border: 1px solid #f76b1a;
+    border-radius: 3px;
+    padding: 5px 6px;
   }
 
   h2 {
@@ -503,6 +606,10 @@ footer p {
 /*モーダルフルバージョン--------------------------------------------*/
 
 /*homes/top--------------------------------------------*/
+  .eye-catch {
+    margin-top: 30px;
+  }
+
   .catch {
     font-size: 33px;
     padding: 28px 0 120px 0;
@@ -561,14 +668,29 @@ footer p {
   }
 
   .user-index a {
-    padding: 10px 0;
+    padding: 12px 0;
   }
 
   .user-info {
     font-size: 18px;
+
+  }
+
+  .icon {
+    margin-right: 10px;
+    width: 28%;
+  }
+
+  .search-count h3 {
+    font-size: 22px;
+    margin-top: 0;
   }
 
 /*senior--------------------------------------------*/
+ .image-form #user_image {
+    margin-bottom: 10px;
+  }
+
   .user-show-top {
     margin: 30px 0 70px;
     font-size: 13px;
@@ -584,6 +706,10 @@ footer p {
 
   .user-profile td {
     font-size: 17px;
+  }
+
+  #user-profile thead {
+    font-size: 18px;
   }
 
   #user-profile tbody td {
@@ -634,6 +760,13 @@ footer p {
     margin-top: 30px;
   }
 
+  #edit-email-button .edit-email-button {
+    margin-top: 20px;
+  }
+
+  #close-email-button .close-email-button {
+    margin-top: 20px;
+  }
 
 /*senior--------------------------------------------*/
   .user-profile-junior {
@@ -699,6 +832,12 @@ footer p {
   .user-index p {
     margin-bottom: 3px;
   }
+
+  .message-no-hit {
+    font-size: 17px;
+    margin-top: 30px;
+  }
+
 /*messages/show--------------------------------------------*/
   .icon-msg-show {
     width: 12%;

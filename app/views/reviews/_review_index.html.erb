@@ -1,4 +1,4 @@
-<h3>高校生からのレビュー</h3>
+<h2>高校生からのレビュー</h2>
 <% unless @reviews.empty? %>
   <% @reviews.each do |review| %>
     <% junior = User.find_by(id: review.junior_id) %>

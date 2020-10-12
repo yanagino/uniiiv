@@ -32,7 +32,7 @@
     </div>
     <%= paginate @junior_links %>
   <% else %>
-    <p>メッセージ機能は申請承認後にご利用できるようになります。</p>
+    <h4 class="message-no-hit">メッセージ機能は申請承認後に<span class="br"></span>ご利用できるようになります。</h4>
   <% end %>
 <% elsif juniors? %>
   <% unless @senior_links.empty? %>
@@ -66,7 +66,7 @@
     </div>
     <%= paginate @senior_links %>
   <% else %>
-    <p>メッセージ機能は申請承認後にご利用できるようになります。</p>
-    <p>申請は、大学生のユーザー詳細画面から実行できます。</p>
+    <h4 class="message-no-hit">メッセージ機能は申請承認後に<span class="br"></span>ご利用できるようになります。</h4>
+    <h4 class="message-no-hit">申請は、大学生の<span class="br"></span>プロフィール画面から実行できます。</h4>
   <% end %>
 <% end %>

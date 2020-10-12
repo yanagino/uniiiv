@@ -94,3 +94,45 @@ function close_email() {
   document.getElementById("edit-email-button").style.display = "block";
   document.getElementById("email-notice").style.display = "block";
 }
+
+function full_modal() {
+  document.getElementById("full-modal").style.display = "block";
+  document.getElementById("full-modal").style.position = "fixed";
+  document.getElementById("full-modal").style.width = "100%";
+  document.getElementById("full-modal").style.height = "100%";
+  document.getElementById("full-modal").style.zIndex = "800";
+  document.getElementById("full-modal").style.backgroundColor = "white";
+  document.getElementById("full-modal").style.transitionDuration = "1s";
+  document.getElementById("full-modal").style.transitionDuration = "1s";
+  document.getElementById("header").style.backgroundColor = "rgb(250, 250, 250)";
+  document.getElementById("full-modal-button").style.display = "none";
+  document.getElementById("close-modal-button").style.display = "block";
+}
+
+function status_modal() {
+  document.getElementById("status-modal").style.display = "block";
+  document.getElementById("status-modal").style.position = "fixed";
+  document.getElementById("status-modal").style.width = "100%";
+  document.getElementById("status-modal").style.height = "100%";
+  document.getElementById("status-modal").style.zIndex = "800";
+  document.getElementById("status-modal").style.backgroundColor = "white";
+  document.getElementById("status-modal").style.transitionDuration = "1s";
+  document.getElementById("status-modal").style.transitionDuration = "1s";
+  document.getElementById("header").style.backgroundColor = "rgb(250, 250, 250)";
+  document.getElementById("status-modal-button").style.display = "none";
+  document.getElementById("close-modal-button").style.display = "block";
+}
+
+function close_modal_full() {
+  document.getElementById("full-modal").style.display = "none";
+  document.getElementById("full-modal-button").style.display = "block";
+  document.getElementById("close-modal-button").style.display = "none";
+  document.getElementById("header").style.backgroundColor = "#fff8f0c7";
+}
+
+function close_modal_status() {
+  document.getElementById("status-modal").style.display = "none";
+  document.getElementById("status-modal-button").style.display = "block";
+  document.getElementById("close-modal-button").style.display = "none";
+  document.getElementById("header").style.backgroundColor = "#fff8f0c7";
+}

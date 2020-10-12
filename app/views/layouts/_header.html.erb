@@ -1,11 +1,12 @@
-<div class="header">
+<div class="header" id="header">
   <h3 class="logo">
     <%= link_to("/") do %>
       <i class="fas fa-graduation-cap"></i>Uniiiv&
     <% end %>
   </h3>
     <% if current_user %>
-      <div class="header-menu">
+
+      <div class="responsive header-menu">
         <% if current_user.status %>
           <%= link_to("/#{current_user.status}/#{current_user.uid}") do %>
             <i class="fas fa-user"></i> <span class="none">マイページ</span>
@@ -29,14 +30,70 @@
           <i class="fas fa-sign-out-alt"></i> <span class="none">ログアウト</span>
         <% end %>
       </div>
+
+      <div class="block header-menu">
+        <% if current_user.status %>
+          <span class="fas fa-bars full-modal-button" id="full-modal-button" onclick="full_modal()"></span>
+          <span class="fas fa-times close-modal-button" id="close-modal-button" onclick="close_modal_full()"></span>
+        <% else %>
+          <span class="fas fa-bars status-modal-button" id="status-modal-button" onclick="status_modal()"></span>
+          <span class="fas fa-times close-modal-button" id="close-modal-button" onclick="close_modal_status()"></span>
+        <% end %>
+      </div>
+
       <div class="clear"></div>
     <% else %>
-      <div class="header-menu">
+      <div class="header-menu header-login">
         <p data-toggle="modal" data-target="#Modal">
           ログイン/新規登録
         </p>
       </div>
       <div class="clear"></div>
     <% end %>
+</div>
+
+<%# ステータス登録あり %>
+<div class="full-modal" id="full-modal">
+  <div class="full-modal-content">
+    <ul>
+      <li>
+        <% if current_user %>
+          <%= link_to("/#{current_user.status}/#{current_user.uid}") do %>
+            <i class="fas fa-user"></i>マイページ
+          <% end %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to("/action") do %>
+          <i class="fas fa-list-ul"></i>申請一覧
+        <% end %>
+      </li>
+      <li>
+        <%= link_to("/messages") do %>
+          <i class="fas fa-comment"></i>メッセージ
+        <% end %>
+      </li>
+      <li>
+        <%= link_to("/logout", method: "POST", data: { confirm: "ログアウトしますか？" }) do %>
+          <i class="fas fa-sign-out-alt"></i>ログアウト
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%# ステータスなし %>
+<div class="full-modal" id="status-modal">
+  <div class="full-modal-content">
+    <ul>
+      <li>          
+        <%= link_to("/status") do %>
+          <i class="fas fa-hand-paper"></i>ステータス登録
+        <% end %>
+      </li>
+        <%= link_to("/logout", method: "POST", data: { confirm: "ログアウトしますか？" }) do %>
+          <i class="fas fa-sign-out-alt"></i>ログアウト
+        <% end %>
+    </ul>
   </div>
 </div>
