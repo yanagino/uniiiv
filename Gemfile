@@ -95,3 +95,8 @@ gem "kaminari"
 
 #AWSへ画像をアップロードするため
 gem 'fog-aws'
+
+#Heroku用のPostgres連携gem
+group :production do
+  gem 'pg', '0.21.0'
+end
