@@ -313,7 +313,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-line!
   omniauth-twitter
-  pg (= 0.21.0)
+  pg
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.3)
   rails-i18n
