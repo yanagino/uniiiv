@@ -20,23 +20,7 @@ before_action :require_user_logged_in, :forbid_status_registed_user, only: [:sta
       @user.save
       flash[:success] = "ログインしました"
       redirect_to("/status")
-    elsif data[:info][:email]
-      @user = User.new(
-        uid: data[:uid],
-        name: data[:info][:name],
-        provider: data[:provider],
-        email: data[:info][:email],
-        notice: "受信する"
-      )
-      if @user.save
-        session[:uid] = @user.uid
-        flash[:success] = "ユーザー登録しました"
-        redirect_to("/status")
-      else
-        flash[:danger] = "連携できませんでした"
-        redirect_to("/")
-      end
-    else
+    else 
       @user = User.new(
         uid: data[:uid],
         name: data[:info][:name],

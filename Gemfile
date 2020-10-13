@@ -92,3 +92,6 @@ gem 'rails-i18n'
 
 #ページネーション
 gem "kaminari"
+
+#AWSへ画像をアップロードするため
+gem 'fog-aws'
