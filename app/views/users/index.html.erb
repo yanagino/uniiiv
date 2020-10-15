@@ -28,7 +28,7 @@
           </div>
         <% end %>
       </div>
-      <%= paginate @links %>
+      <%= paginate @links, window: 2 %>
     <% else %>
       <h4>まだ申請を送っていません。</h4>
     <% end %>
@@ -61,7 +61,7 @@
           </div>
         <% end %>
       </div>
-      <%= paginate @links %>
+      <%= paginate @links, window: 2 %>
     <% else %>
       <h4>まだ申請がありません。</h4>
     <% end %>

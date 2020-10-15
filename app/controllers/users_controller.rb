@@ -4,15 +4,16 @@ before_action :status_regist, only: [:index, :seniors, :juniors, :destroy]
   
   def index
     if juniors?
-      @links = current_user.links_se.order(created_at: "DESC").page(params[:page]).per(15)
+      @links = current_user.links_se.order(created_at: "DESC").page(params[:page]).per(9)
     elsif seniors?
-      @links = current_user.links_ju.order(created_at: "DESC").page(params[:page]).per(15)
+      @links = current_user.links_ju.order(created_at: "DESC").page(params[:page]).per(9)
     end
   end
 
   def seniors
     @user = User.find_by(uid: params[:uid])
     @reviews = @user.reviews.order(created_at: "DESC").page(params[:page]).per(5)
+    @count = @reviews.total_count
   end
 
   def juniors

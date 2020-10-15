@@ -270,3 +270,28 @@
   font-size: 16px;
   letter-spacing: 0.05em;
 }
+
+//ページネーション：もっと見るボタン-----------------------------------
+.more {
+  margin: 0 auto;
+  font-size: 23px;
+  margin-top: 50px;
+  width: 50%;
+  background-color: rgb(224, 112, 70);
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.more a {
+  display: block;
+  color: white;
+  padding: 10px 0;
+}
+
+.more:hover {
+opacity: 0.95;
+}
+
+ .review-index .more {
+  margin-top: 10px;
+}

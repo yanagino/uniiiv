@@ -187,12 +187,17 @@
 }
 
 .email-notice h2 {
-  margin-top: 0;
+  font-size: 25px;
+  border: none;
+  margin-top: 20px;
+  padding: 0.5em 1em;
+  background: -webkit-repeating-linear-gradient(-45deg, #fff5f0, #fff5f0 3px,#ffded1 3px, #ffded1 7px);
+  background: repeating-linear-gradient(-45deg, #fff5f0, #fff5f0 3px,#ffded1 3px, #ffded1 7px);
 }
 
 .email-notice h3 {
-  font-weight: bold;
   font-size: 21px;
+  word-wrap: break-word;
 }
 
 .email-notice label {

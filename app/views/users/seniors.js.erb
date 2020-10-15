@@ -1,0 +1,7 @@
+$('#review-lists').append("<%= escape_javascript(render 'reviews/review_index') %>");
+$("#review_more").replaceWith("<%= escape_javascript( 
+link_to_next_page(@reviews, "もっと見る", remote: true, id: 'review_more')) %>");
+
+$('#review-lists-2').append("<%= escape_javascript(render 'reviews/review_index') %>");
+$("#review_more_2").replaceWith("<%= escape_javascript( 
+link_to_next_page(@reviews, "もっと見る", remote: true, id: 'review_more_2')) %>");

@@ -56,7 +56,8 @@
   <% end %>
 
 <% unless @users.empty? %>
-  <%= render("users/user_index", users: @users) %>
+  <div id="user-lists"><%= render("users/user_index", users: @users) %></div>
+   <div class="more"><%= link_to_next_page @users, 'もっと見る', remote: true, id: "view_more" %></div>
 <% else %>
   <p class="no-hit">ヒットしませんでした</p>
 <% end %>

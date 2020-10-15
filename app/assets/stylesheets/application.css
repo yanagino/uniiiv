@@ -248,12 +248,30 @@ h2 {
 
 /*ページネーション自体のデザイン*/
 .pagination {
-  font-size: 18px;
+  margin-top: 50px;
+  font-size: 20px;
   font-weight: bold;
 }
 
-.pagination .page {
-  margin: 0 2px;
+.pagination a {
+  color: rgb(66, 118, 196);
+}
+
+.gap {
+  color: rgb(66, 118, 196);
+}
+
+.pagination .page:not(.current) {
+  margin: 0 7px;
+}
+
+.current {
+  display: inline-block;
+  padding: 3px 11px;
+  color: white;
+  background-color: rgb(235, 100, 51);
+  border-radius: 100px;
+  margin: 0;
 }
 
 footer {
@@ -339,6 +357,12 @@ footer p {
 
   .responsive {
     display: none;
+  }
+  
+  .more {
+    font-size: 23px;
+    margin-top: 50px;
+    width: 50%;
   }
 
 /*モーダルフルバージョン--------------------------------------------*/
@@ -452,6 +476,10 @@ footer p {
     float: none;
     width: 100%;
     margin-top: 100px;
+  }
+
+  .review-index h2 {
+    font-size: 30px;
   }
 
 /*senior--------------------------------------------*/
@@ -602,6 +630,25 @@ footer p {
     display: block;
   }
 
+  .more {
+    font-size: 21px;
+    margin-top: 50px;
+    width: 60%;
+  }
+
+  .pagination {
+    margin-top: 40px;
+    font-size: 18px;
+  }
+
+  .pagination .page {
+    margin: 0 3px;
+  }
+
+  .more {
+    margin-top: 20px;
+  }
+
 /*モーダルフルバージョン--------------------------------------------*/
 
 /*homes/top--------------------------------------------*/
@@ -728,6 +775,11 @@ footer p {
     margin-top: 70px;
   }
 
+  .review-index h2 {
+    font-size: 22px;
+  }
+
+
   .review-content h4 {
     font-size: 16px;
   }
@@ -738,9 +790,15 @@ footer p {
   }
 
   #edit-name-form label {
-    margin: 0 0 2px 0;
+    margin: 0 0 2px 5px;
     font-size: 16px;
   }
+
+  #edit-name-form {
+    text-align: left;
+  }
+
+
 
   .form-control {
     margin: 0;
@@ -805,7 +863,13 @@ footer p {
   }
 
   .email-notice h3 {
-    font-size: 18px;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .email-notice label {
+    text-align: left;
+    font-size: 16px;
   }
 
   .non-review {

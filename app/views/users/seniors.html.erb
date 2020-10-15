@@ -32,7 +32,9 @@
 
   <div class="none">
     <div class="review-index">
-      <%= render("reviews/review_index.html.erb") %>
+      <h2>高校生からのレビュー(<%= @count %>件)</h2>
+      <div id="review-lists"><%= render("reviews/review_index") %></div>
+      <div class="more"><%= link_to_next_page @reviews, 'もっと見る', remote: true, id: "review_more" %></div>
     </div>
   </div>
 </div>
@@ -47,6 +49,8 @@
 
 <div class="block">
   <div class="review-index">
-    <%= render("reviews/review_index.html.erb") %>
+    <h2>高校生からのレビュー(<%= @count %>件)</h2>
+    <div id="review-lists-2"><%= render("reviews/review_index") %></div>
+    <div class="more"><%= link_to_next_page @reviews, 'もっと見る', remote: true, id: "review_more_2" %></div>
   </div>
 </div>

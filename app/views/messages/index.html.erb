@@ -30,7 +30,7 @@
         </div>
       <% end %>
     </div>
-    <%= paginate @junior_links %>
+    <%= paginate @junior_links, window: 2 %>
   <% else %>
     <h4 class="message-no-hit">メッセージ機能は申請承認後に<span class="br"></span>ご利用できるようになります。</h4>
   <% end %>
@@ -64,7 +64,7 @@
         </div>
       <% end %>
     </div>
-    <%= paginate @senior_links %>
+    <%= paginate @senior_links, window: 2 %>
   <% else %>
     <h4 class="message-no-hit">メッセージ機能は申請承認後に<span class="br"></span>ご利用できるようになります。</h4>
     <h4 class="message-no-hit">申請は、大学生の<span class="br"></span>プロフィール画面から実行できます。</h4>

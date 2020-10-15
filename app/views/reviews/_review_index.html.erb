@@ -1,4 +1,3 @@
-<h2>高校生からのレビュー</h2>
 <% unless @reviews.empty? %>
   <% @reviews.each do |review| %>
     <% junior = User.find_by(id: review.junior_id) %>
@@ -30,7 +29,6 @@
     </div>
 
   <% end %>
-  <%= paginate @reviews %>
 <% else %>
   <p class="non-review">まだレビューはありません</p>
 <% end %>
