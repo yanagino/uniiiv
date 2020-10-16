@@ -668,6 +668,10 @@ footer p {
     top: 50%;
   }
 
+  .login-btn:focus {
+    top: 51%;
+  }
+
   .first-check {
     font-size: 14px;
     top: 59%;
