@@ -479,7 +479,11 @@ footer p {
   }
 
   .review-index h2 {
-    font-size: 30px;
+    font-size: 25px;
+    border: none;
+    padding: 0.5em 0;
+    background: -webkit-repeating-linear-gradient(-45deg, #fff5f0, #fff5f0 3px,#ffd1d7 3px, #ffd1d7 7px);
+    background: repeating-linear-gradient(-45deg, #fff5f0, #fff5f0 3px,#ffd1d7 3px, #ffd1d7 7px);
   }
 
 /*senior--------------------------------------------*/
@@ -1001,4 +1005,31 @@ footer p {
   margin: 0;
   text-align: left;
 }
+
+/* プライバシーポリシー---------------------------------- */
+.privacy-policy h3 {
+  font-size: 21px;
+}
+
+.privacy-policy p {
+  font-size: 14px;
+}
+
+.privacy-policy li {
+  font-size: 14px;
+}
+
+/* 利用規約---------------------------------- */
+.terms-of-use h3 {
+  font-size: 21px;
+}
+
+.terms-of-use p {
+  font-size: 14px;
+}
+
+.terms-of-use li {
+  font-size: 14px;
+}
+
 }
