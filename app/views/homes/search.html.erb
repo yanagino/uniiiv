@@ -2,7 +2,7 @@
 
 
 <%= form_tag("/search", method: "GET") do %>
-  <input name="keyword" placeholder="京都大学, 経済学部, 数学 など" class="search-input">
+  <input name="keyword" placeholder="京都大学, 経済学部, 数学 など" class="search-input" autocomplete="off">
   <%= button_tag type: "submit", class: "search-submit" do %>
     <span class="fa fa-search"></span> <span class="none">検索</span>
   <% end %>

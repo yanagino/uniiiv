@@ -482,8 +482,8 @@ footer p {
     font-size: 25px;
     border: none;
     padding: 0.5em 0;
-    background: -webkit-repeating-linear-gradient(-45deg, #fff5f0, #fff5f0 3px,#ffd1d7 3px, #ffd1d7 7px);
-    background: repeating-linear-gradient(-45deg, #fff5f0, #fff5f0 3px,#ffd1d7 3px, #ffd1d7 7px);
+    background: -webkit-repeating-linear-gradient(-45deg, #fff5f0, #fff5f0 3px,#fdd9de 3px, #fdd9de 7px);
+    background: repeating-linear-gradient(-45deg, #fff5f0, #fff5f0 3px,#fdd9de 3px, #fdd9de 7px);
   }
 
 /*senior--------------------------------------------*/
@@ -501,6 +501,10 @@ footer p {
 
   .email-notice h2 {
     margin-top: 15px;
+  }
+
+  .email-notice h3 {
+    font-size: 18px;
   }
 
 /*messages/index--------------------------------------------*/
@@ -769,6 +773,7 @@ footer p {
 
   #user-profile tbody td {
     font-size: 16px;
+    padding: 15px;
   }
 
   #edit-profile-form label {
@@ -805,8 +810,6 @@ footer p {
   #edit-name-form {
     text-align: left;
   }
-
-
 
   .form-control {
     margin: 0;

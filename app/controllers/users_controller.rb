@@ -38,9 +38,9 @@ before_action :status_regist, only: [:index, :seniors, :juniors, :destroy]
           flash[:success] = "プロフィールを編集しました"
           redirect_to("/#{@user.status}/#{@user.uid}")
         else
-          flash.now[:danger] = "プロフィールの編集に失敗しました"
+          flash[:danger] = "プロフィールの編集に失敗しました"
           @reviews = @user.reviews.order(created_at: "DESC").page(params[:page]).per(5)
-          render("users/#{@user.status}")
+          redirect_to("/#{@user.status}/#{@user.uid}")
         end
       else
         flash.now[:danger] = "プロフィールの編集に失敗しました"

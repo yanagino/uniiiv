@@ -115,13 +115,14 @@
   background-color: rgb(194, 189, 178);
   color: rgb(14, 13, 13);
   font-size: 20px;
+  font-weight: bold;
 }
 
 #user-profile tbody td {
   background-color: rgb(253, 253, 253);
   font-size: 17px;
-  padding: 30px 20px;
-  font-weight: bold;
+  padding: 15px 20px;
+  text-align: left;
 }
 
 #edit-profile-button .edit-profile-button {
