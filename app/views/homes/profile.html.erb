@@ -7,7 +7,7 @@
 
   <div class="blank-5"></div>
 
-  <div class="user-show-top">
+  <div class="user-show-top admin-name">
     <div class="user-name">
       <%= @user.name %>
     </div>
@@ -29,21 +29,21 @@
 <div id="user-profile">
   <table class="table">
     <thead><tr><td>自己紹介</td></tr></thead>
-    <tbody><tr><td><%= @user.content1 %></td></tr></tbody>
+    <tbody><tr><td><%= safe_join(@user.content1.split("\n"),tag(:br)) %></td></tr></tbody>
   </table>
 
   <table class="table">
     <thead><tr><td>大学で学んでいること</td></tr></thead>
-    <tbody><tr><td><%= @user.content2 %></td></tr></tbody>
+    <tbody><tr><td><%= safe_join(@user.content2.split("\n"),tag(:br)) %></td></tr></tbody>
   </table>
 
   <table class="table">
     <thead><tr><td>おすすめの参考書</td></tr></thead>
-    <tbody><tr><td><%= @user.content3 %></tbody>
+    <tbody><tr><td><%= safe_join(@user.content3.split("\n"),tag(:br)) %></tbody>
   </table>
   
   <table class="table">
     <thead><tr><td>所属しているサークル・アルバイト</td></tr></thead>
-    <tbody><tr><td><%= @user.content4 %></tbody>
+    <tbody><tr><td><%= safe_join(@user.content4.split("\n"),tag(:br)) %></tbody>
   </table>
 </div>

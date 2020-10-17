@@ -327,6 +327,12 @@ footer p {
   display: none;
 }
 
+/* admin---------------------------------------- */
+.admin-name {
+  padding-top: 13px;
+  padding-bottom: 5px;
+}
+
 
 /*タブレット向けデザイン--------------------------------------------*/
 /*タブレット向けデザイン--------------------------------------------*/
@@ -635,7 +641,7 @@ footer p {
 
   footer {
     padding: 10px 10px;
-    height: 210px;
+    height: 220px;
   }
 
   footer h3 {
@@ -644,6 +650,10 @@ footer p {
 
   footer a {
     display: block;
+  }
+
+  footer p {
+    margin: 20px 0;
   }
 
   .more {
