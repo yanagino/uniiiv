@@ -79,6 +79,7 @@ a, a:hover, a:visited {
   border: 1.5px solid #f76b1a;
   border-radius: 3px;
   padding: 5px 14px;
+  -webkit-user-select: none;
 }
 
 .header-login:hover {
@@ -329,8 +330,8 @@ footer p {
 
 /* admin---------------------------------------- */
 .admin-name {
-  padding-top: 13px;
-  padding-bottom: 5px;
+  padding-top: 18px;
+  padding-bottom: 10px;
 }
 
 
