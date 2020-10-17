@@ -74,18 +74,24 @@ a, a:hover, a:visited {
 }
 
 .header-login {
+  padding-top: 0;
   margin-top: 9px;
   font-size: 18px;
+  -webkit-user-select: none;
+}
+
+.header-login p {
+  display: block;
   border: 1.5px solid #f76b1a;
   border-radius: 3px;
   padding: 5px 14px;
-  -webkit-user-select: none;
 }
 
 .header-login:hover {
   background-color: #f76b1a;
   color: white;
   transition-duration: 0.2s;
+  border-radius: 3px;
 }
 
 .header-login p {
@@ -460,8 +466,10 @@ footer p {
   .header-login {
     margin-top: 12px;
     font-size: 15px;
+  }
+
+  .header-login p {
     border: 1px solid #f76b1a;
-    border-radius: 3px;
     padding: 5px 10px;
   }
 
@@ -635,8 +643,9 @@ footer p {
   .header-login {
     margin-top: 12px;
     font-size: 15px;
-    border: 1px solid #f76b1a;
-    border-radius: 3px;
+  }
+
+  .header-login p {
     padding: 5px 6px;
   }
 
