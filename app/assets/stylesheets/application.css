@@ -822,7 +822,7 @@ footer p {
   }
 
   .review-index h2 {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   .review-icon {
@@ -907,7 +907,8 @@ footer p {
   }
 
   .email-notice h2 {
-    font-size: 23px;
+    font-size: 21px;
+    padding: 11.5px 0;
   }
 
   .email-notice h3 {
