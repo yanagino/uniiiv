@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/search" => "homes#search"
   get "/privacy" => "homes#privacy"
   get "/terms" => "homes#terms"
+  get "/profile" => "homes#profile"
 
   get '/auth/:provider/callback' => 'sessions#create'
   get "/status" => "sessions#status"

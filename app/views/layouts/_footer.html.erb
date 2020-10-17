@@ -1,6 +1,12 @@
 <footer>
   <div class="footer-left">
     <h3>Uniiiv&</h3>
+    <% if logged_in? %>
+      <%= link_to("管理人プロフィール", "/seniors/U7a09f55f8fb01dcc4e3702d18b3a8da1") %>
+    <% else %>
+      <%= link_to("管理人プロフィール", "/profile") %>
+    <% end %>
+    <span class="none2"><span class="header-bar">|</span></span>
     <%= link_to("プライバシーポリシー", "/privacy") %>
     <span class="none2"><span class="header-bar">|</span></span>
     <%= link_to("利用規約", "/terms") %>

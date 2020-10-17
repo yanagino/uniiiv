@@ -472,6 +472,10 @@ footer p {
     width: 100%;
   }
 
+  .review-icon {
+    width: 10%;
+  }
+
   .review-index {
     float: none;
     width: 100%;
@@ -631,7 +635,7 @@ footer p {
 
   footer {
     padding: 10px 10px;
-    height: 190px;
+    height: 210px;
   }
 
   footer h3 {
@@ -796,9 +800,13 @@ footer p {
     font-size: 22px;
   }
 
+  .review-icon {
+    width: 14%;
+  }
 
   .review-content h4 {
     font-size: 16px;
+    margin-left: 0;
   }
 
   #edit-name-form .form-control {

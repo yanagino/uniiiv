@@ -16,11 +16,13 @@ class HomesController < ApplicationController
   end
 
   def privacy
-
   end
 
   def terms
-    
+  end
+
+  def profile
+    @user = User.first
   end
 
 end

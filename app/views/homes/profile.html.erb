@@ -1,0 +1,49 @@
+<div class="user-flex">
+  <div class="blank-5"></div>
+
+  <div class="user-image">
+    <%= image_tag @user.image.url, class: "icon-profile", alt: "ユーザーアイコン" %>
+  </div>
+
+  <div class="blank-5"></div>
+
+  <div class="user-show-top">
+    <div class="user-name">
+      <%= @user.name %>
+    </div>
+    <div id="user-school-id">
+      <div class="user-school-1">
+        <h3><%= @user.school %> <%= @user.department %></h3>
+      </div>
+      <div class="user-school-2">
+        <h3><%= @user.subject %> <%= @user.grade %></h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div id="user-profile">
+  <table class="table">
+    <thead><tr><td>自己紹介</td></tr></thead>
+    <tbody><tr><td><%= @user.content1 %></td></tr></tbody>
+  </table>
+
+  <table class="table">
+    <thead><tr><td>大学で学んでいること</td></tr></thead>
+    <tbody><tr><td><%= @user.content2 %></td></tr></tbody>
+  </table>
+
+  <table class="table">
+    <thead><tr><td>おすすめの参考書</td></tr></thead>
+    <tbody><tr><td><%= @user.content3 %></tbody>
+  </table>
+  
+  <table class="table">
+    <thead><tr><td>所属しているサークル・アルバイト</td></tr></thead>
+    <tbody><tr><td><%= @user.content4 %></tbody>
+  </table>
+</div>
