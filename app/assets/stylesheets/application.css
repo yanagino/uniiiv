@@ -107,6 +107,11 @@ a, a:hover, a:visited {
   margin: 5px 0;
 }
 
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
 .error {
   margin: 5px 0;
 }
