@@ -771,6 +771,10 @@ footer p {
     font-size: 18px;
   }
 
+  .user-info-top {
+    font-size: 22px;
+  }
+
   .icon {
     margin-right: 10px;
     width: 28%;
