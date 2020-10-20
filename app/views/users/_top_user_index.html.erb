@@ -1,0 +1,17 @@
+<div class="user-flex">
+  <% users.each do |user| %>
+    <div class="user-index">
+      <%= link_to("/seniors/#{user.uid}") do %>
+        <%= image_tag user.image.url, class: "icon", alt: "ユーザーアイコン" %>
+        <div class="user-info">
+          <div class="user-school user-school-top">
+            <%= user.school %>
+          </div>
+          <div class="user-department">
+            <%= user.department %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
