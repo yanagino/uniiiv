@@ -13,6 +13,6 @@
 </div>
 
 <% unless @users.empty? %>
-  <div id="user-lists"><%= render("users/user_index", users: @users) %></div>
+  <div id="user-lists"><%= render("users/top_user_index", users: @users) %></div>
    <div class="more"><%= link_to_next_page @users, 'もっと見る', remote: true, id: "view_more" %></div>
 <% end %>
