@@ -473,6 +473,10 @@ footer p {
     padding: 5px 10px;
   }
 
+  .user-info-top {
+    font-size: 22px;
+  }
+
 /*senior--------------------------------------------*/
   .blank-5 {
     display: none;
@@ -765,7 +769,10 @@ footer p {
 
   .user-info {
     font-size: 18px;
+  }
 
+  .user-info-top {
+    font-size: 20px;
   }
 
   .icon {

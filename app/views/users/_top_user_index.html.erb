@@ -3,7 +3,7 @@
     <div class="user-index">
       <%= link_to("/seniors/#{user.uid}") do %>
         <%= image_tag user.image.url, class: "icon", alt: "ユーザーアイコン" %>
-        <div class="user-info">
+        <div class="user-info user-info-top">
           <div class="user-school user-school-top">
             <%= user.school %>
           </div>
